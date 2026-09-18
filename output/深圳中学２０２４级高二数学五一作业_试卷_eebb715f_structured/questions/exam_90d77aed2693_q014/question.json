@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_90d77aed2693_q014",
+  "display_id": "EXAM-90D77AED2693-Q014",
+  "source_exam": "深圳中学 2024 级高二数学 五一作业",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学２０２４级高二数学五一作业_试卷_eebb715f_ocr\\01_深圳中学２０２４级高二数学五一作业_试卷.md",
+  "solution_file": "",
+  "question_number": 14,
+  "question_type": "fill_blank",
+  "stem_markdown": "### 14. 已知函数 $f(x) = a \\ln x - 2x (a > 0)$ ，若不等式 $x^a e^{-2x} \\geq 3f(x) + 1$ 对 $x > 0$ 恒成立，则实数 $a$ 的取值范围为 \\_\\_\\_\\_.\n\n#",
+  "stem_html": "<h3>14. 已知函数 $f(x) = a \\ln x - 2x (a &gt; 0)$ ，若不等式 $x^a e^{-2x} \\geq 3f(x) + 1$ 对 $x &gt; 0$ 恒成立，则实数 $a$ 的取值范围为 ____.</h3>\n<h1></h1>",
+  "options": {},
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": null,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-10T11:53:20.517024+00:00",
+    "question_source_sha256": "15514af6ceb54dc08cbfc8100c7df26b356cb6688fdd3bfe5c4f436c61261dd5",
+    "solution_source_sha256": ""
+  }
+}

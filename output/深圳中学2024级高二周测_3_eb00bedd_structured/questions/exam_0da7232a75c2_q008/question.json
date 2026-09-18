@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_0da7232a75c2_q008",
+  "display_id": "EXAM-0DA7232A75C2-Q008",
+  "source_exam": "深圳中学 2024 级高二数学周测（3）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_3_eb00bedd_ocr\\01_深圳中学2024级高二周测_3.md",
+  "solution_file": "",
+  "question_number": 8,
+  "question_type": "single_choice",
+  "stem_markdown": "### 8. 已知 $a \\in \\mathbf{R}$ ，设函数 $f(x) = \\begin{cases} x^2 - 2ax + 2a, & x,, 1, \\\\ x - a\\ln x, & x > 1, \\end{cases}$ 若关于 $x$ 的不等式 $f(x)$ .0 在 $\\mathbf{R}$ 上恒成立，则 $a$ 的取值范围为\n\nA. [0,1]\n\nB. [0,2]\n\nC. [0,e]\n\nD. [1,e]\n\n#",
+  "stem_html": "<h3>8. 已知 $a \\in \\mathbf{R}$ ，设函数 $f(x) = \\begin{cases} x^2 - 2ax + 2a, &amp; x,, 1, \\\\ x - a\\ln x, &amp; x &gt; 1, \\end{cases}$ 若关于 $x$ 的不等式 $f(x)$ .0 在 $\\mathbf{R}$ 上恒成立，则 $a$ 的取值范围为</h3>\n<p>A. [0,1]</p>\n<p>B. [0,2]</p>\n<p>C. [0,e]</p>\n<p>D. [1,e]</p>\n<h1></h1>",
+  "options": {
+    "A": "[0,1]",
+    "B": "[0,2]",
+    "C": "[0,e]",
+    "D": "[1,e]\n\n#"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T01:40:53.466926+00:00",
+    "question_source_sha256": "60f0111d8ba0c195d5ce744a7b4bc0115a2b75ea53f1c5521370cc5f7c8eff4c",
+    "solution_source_sha256": ""
+  }
+}

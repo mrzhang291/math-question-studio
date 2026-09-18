@@ -21,6 +21,7 @@ env/
 .idea/
 Thumbs.db
 Desktop.ini
+**/node_modules/
 
 # Generated temporary exports
 *.tmp
@@ -29,8 +30,10 @@ Desktop.ini
 *.zip
 
 # OCR caches and generated review artifacts
+\.local/
 **/*_mineru_cache/
 **/_raw_mineru/
 **/_reports/
+**/workbench_capture_profile/
 project-architecture.*
 feishu-project-report.xml

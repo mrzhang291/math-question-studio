@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_0da7232a75c2_q015",
+  "display_id": "EXAM-0DA7232A75C2-Q015",
+  "source_exam": "深圳中学 2024 级高二数学周测（3）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_3_4324ba98_ocr\\01_深圳中学2024级高二周测_3.md",
+  "solution_file": "",
+  "question_number": 15,
+  "question_type": "solution",
+  "stem_markdown": "### 15. 设函数 $f(x)=[ax^{2}-(4a+1)x+4a+3]e^{x}$ .\n\n(1)若曲线 $y = f(x)$ 在点 $(1, f(1))$ 处的切线与 x 轴平行，求 a；\n\n(2)若 $f(x)$ 在 x=2 处取得极小值，求 a 的取值范围.",
+  "stem_html": "<h3>15. 设函数 $f(x)=[ax^{2}-(4a+1)x+4a+3]e^{x}$ .</h3>\n<p>(1)若曲线 $y = f(x)$ 在点 $(1, f(1))$ 处的切线与 x 轴平行，求 a；</p>\n<p>(2)若 $f(x)$ 在 x=2 处取得极小值，求 a 的取值范围.</p>",
+  "options": {},
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": null,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T09:22:49.112130+00:00",
+    "question_source_sha256": "60f0111d8ba0c195d5ce744a7b4bc0115a2b75ea53f1c5521370cc5f7c8eff4c",
+    "solution_source_sha256": ""
+  }
+}

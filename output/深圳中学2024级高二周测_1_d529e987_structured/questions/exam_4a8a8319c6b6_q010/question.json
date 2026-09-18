@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_4a8a8319c6b6_q010",
+  "display_id": "EXAM-4A8A8319C6B6-Q010",
+  "source_exam": "深圳中学 2024 级高二数学周测（1）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_1_d529e987_ocr\\01_深圳中学2024级高二周测_1.md",
+  "solution_file": "",
+  "question_number": 10,
+  "question_type": "multiple_choice",
+  "stem_markdown": "### 10. 已知定义在 $R$ 上的偶函数 $f(x)$ 满足 $f(0) = 2, f(3 - x) + f(x) = 1$ ，设 $f(x)$ 在 $R$ 上的导函数为 $g(x)$ ，则（）\n\nA. $g(2025) = 0$\n\nB. $g\\left(\\frac{3}{2}\\right) = \\frac{1}{2}$\n\nC. $g(x + 6) = g(x)$\n\nD. $\\sum_{n=1}^{2025} f(n) = 1011$",
+  "stem_html": "<h3>10. 已知定义在 $R$ 上的偶函数 $f(x)$ 满足 $f(0) = 2, f(3 - x) + f(x) = 1$ ，设 $f(x)$ 在 $R$ 上的导函数为 $g(x)$ ，则（）</h3>\n<p>A. $g(2025) = 0$</p>\n<p>B. $g\\left(\\frac{3}{2}\\right) = \\frac{1}{2}$</p>\n<p>C. $g(x + 6) = g(x)$</p>\n<p>D. $\\sum_{n=1}^{2025} f(n) = 1011$</p>",
+  "options": {
+    "A": "$g(2025) = 0$",
+    "B": "$g\\left(\\frac{3}{2}\\right) = \\frac{1}{2}$",
+    "C": "$g(x + 6) = g(x)$",
+    "D": "$\\sum_{n=1}^{2025} f(n) = 1011$"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 6,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T09:06:33.879136+00:00",
+    "question_source_sha256": "792c0598f613c48e1cb160411bfdb4297a79c74daab446701006a1d3f8f24f16",
+    "solution_source_sha256": ""
+  }
+}

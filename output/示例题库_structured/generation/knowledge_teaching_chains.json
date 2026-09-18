@@ -1,9 +1,9 @@
 {
   "schema_version": "knowledge-teaching-chains-v1",
-  "generated_at": "2026-08-05T08:24:03.175016+00:00",
+  "generated_at": "2026-09-13T08:26:26.178381+00:00",
   "scope": "knowledge_practice",
   "logic": "knowledge_first_before_student_profile",
-  "recommendation_logic_version": "knowledge-teaching-chain-scoring-v1",
+  "recommendation_logic_version": "knowledge-teaching-chain-scoring-v2",
   "student_specific": false,
   "chain_count": 10,
   "skipped_chain_count": 1,
@@ -13,7 +13,7 @@
       "primary_knowledge": "导数与微分·导数定义·平均变化率与瞬时变化率",
       "question_type": "single_choice",
       "logic": "knowledge_first",
-      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v1",
+      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v2",
       "student_specific": false,
       "stages": [
         {
@@ -125,7 +125,7 @@
       "primary_knowledge": "导数与微分·求导运算·基本函数求导",
       "question_type": "single_choice",
       "logic": "knowledge_first",
-      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v1",
+      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v2",
       "student_specific": false,
       "stages": [
         {
@@ -239,7 +239,7 @@
       "primary_knowledge": "导数与微分·切线方程·求切线",
       "question_type": "single_choice",
       "logic": "knowledge_first",
-      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v1",
+      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v2",
       "student_specific": false,
       "stages": [
         {
@@ -351,7 +351,7 @@
       "primary_knowledge": "导数应用·极值与最值·求最值",
       "question_type": "fill_blank",
       "logic": "knowledge_first",
-      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v1",
+      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v2",
       "student_specific": false,
       "stages": [
         {
@@ -463,7 +463,7 @@
       "primary_knowledge": "函数综合·函数性质·奇偶性与周期性",
       "question_type": "single_choice",
       "logic": "knowledge_first",
-      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v1",
+      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v2",
       "student_specific": false,
       "stages": [
         {
@@ -574,7 +574,7 @@
       "primary_knowledge": "导数应用·单调性·判断单调区间",
       "question_type": "fill_blank",
       "logic": "knowledge_first",
-      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v1",
+      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v2",
       "student_specific": false,
       "stages": [
         {
@@ -685,7 +685,7 @@
       "primary_knowledge": "导数应用·不等式证明·构造函数证明",
       "question_type": "single_choice",
       "logic": "knowledge_first",
-      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v1",
+      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v2",
       "student_specific": false,
       "stages": [
         {
@@ -797,7 +797,7 @@
       "primary_knowledge": "导数应用·极值与最值·求极值",
       "question_type": "multiple_choice",
       "logic": "knowledge_first",
-      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v1",
+      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v2",
       "student_specific": false,
       "stages": [
         {
@@ -909,7 +909,7 @@
       "primary_knowledge": "概率统计·概率模型·全概率公式",
       "question_type": "single_choice",
       "logic": "knowledge_first",
-      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v1",
+      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v2",
       "student_specific": false,
       "stages": [
         {
@@ -1023,7 +1023,7 @@
       "primary_knowledge": "概率统计·数字特征·期望与方差",
       "question_type": "solution",
       "logic": "knowledge_first",
-      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v1",
+      "recommendation_logic_version": "knowledge-teaching-chain-scoring-v2",
       "student_specific": false,
       "stages": [
         {

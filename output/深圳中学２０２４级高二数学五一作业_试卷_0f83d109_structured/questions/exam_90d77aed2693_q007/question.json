@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_90d77aed2693_q007",
+  "display_id": "EXAM-90D77AED2693-Q007",
+  "source_exam": "深圳中学 2024 级高二数学 五一作业",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学２０２４级高二数学五一作业_试卷_0f83d109_ocr\\01_深圳中学２０２４级高二数学五一作业_试卷.md",
+  "solution_file": "",
+  "question_number": 7,
+  "question_type": "single_choice",
+  "stem_markdown": "### 7. 已知函数 $f(x) = \\mathrm{e}^x - a\\ln (ax - a) + a (a > 0)$ ，若对于任意的 $x > 1$ 使得不等式 $f(x) \\geq 0$ 成立，则实数 $a$ 的取值范围（）\n\nA. $(0, \\mathrm{e}^2]$\n\nB. $(0, \\mathrm{e}^{\\mathrm{e}}]$\n\nC. $[\\mathrm{e}^2, +\\infty)$\n\nD. $[\\mathrm{e}^{\\mathrm{e}}, +\\infty)$",
+  "stem_html": "<h3>7. 已知函数 $f(x) = \\mathrm{e}^x - a\\ln (ax - a) + a (a &gt; 0)$ ，若对于任意的 $x &gt; 1$ 使得不等式 $f(x) \\geq 0$ 成立，则实数 $a$ 的取值范围（）</h3>\n<p>A. $(0, \\mathrm{e}^2]$</p>\n<p>B. $(0, \\mathrm{e}^{\\mathrm{e}}]$</p>\n<p>C. $[\\mathrm{e}^2, +\\infty)$</p>\n<p>D. $[\\mathrm{e}^{\\mathrm{e}}, +\\infty)$</p>",
+  "options": {
+    "A": "$(0, \\mathrm{e}^2]$",
+    "B": "$(0, \\mathrm{e}^{\\mathrm{e}}]$",
+    "C": "$[\\mathrm{e}^2, +\\infty)$",
+    "D": "$[\\mathrm{e}^{\\mathrm{e}}, +\\infty)$"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": null,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-13T10:54:41.984295+00:00",
+    "question_source_sha256": "15514af6ceb54dc08cbfc8100c7df26b356cb6688fdd3bfe5c4f436c61261dd5",
+    "solution_source_sha256": ""
+  }
+}

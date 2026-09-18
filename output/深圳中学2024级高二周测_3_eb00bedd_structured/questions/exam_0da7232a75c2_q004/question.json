@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_0da7232a75c2_q004",
+  "display_id": "EXAM-0DA7232A75C2-Q004",
+  "source_exam": "深圳中学 2024 级高二数学周测（3）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_3_eb00bedd_ocr\\01_深圳中学2024级高二周测_3.md",
+  "solution_file": "",
+  "question_number": 4,
+  "question_type": "single_choice",
+  "stem_markdown": "### 4. 设 $f(x) = x - \\sin x$ ，则 $f(x) =$\n\nA. 既是奇函数又是减函数\n\nB. 既是奇函数又是增函数\n\nC. 是有零点的减函数\n\nD. 是没有零点的奇函数",
+  "stem_html": "<h3>4. 设 $f(x) = x - \\sin x$ ，则 $f(x) =$</h3>\n<p>A. 既是奇函数又是减函数</p>\n<p>B. 既是奇函数又是增函数</p>\n<p>C. 是有零点的减函数</p>\n<p>D. 是没有零点的奇函数</p>",
+  "options": {
+    "A": "既是奇函数又是减函数",
+    "B": "既是奇函数又是增函数",
+    "C": "是有零点的减函数",
+    "D": "是没有零点的奇函数"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T01:40:53.458721+00:00",
+    "question_source_sha256": "60f0111d8ba0c195d5ce744a7b4bc0115a2b75ea53f1c5521370cc5f7c8eff4c",
+    "solution_source_sha256": ""
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_a9e115aa7ff5_q003",
+  "display_id": "EXAM-A9E115AA7FF5-Q003",
+  "source_exam": "深圳中学 2024 级高二数学周测（4）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_3_4324ba98_ocr\\02_深圳中学2024级高二周测_4.md",
+  "solution_file": "",
+  "question_number": 3,
+  "question_type": "single_choice",
+  "stem_markdown": "### 3. 直线 $x + y - 1 = 0$ 是曲线 $y = \\ln x - 2x + a$ 的一条切线，则 $a = (\\quad)$\n\nA. -2\n\nB. -1\n\nC. 1\n\nD. 2",
+  "stem_html": "<h3>3. 直线 $x + y - 1 = 0$ 是曲线 $y = \\ln x - 2x + a$ 的一条切线，则 $a = (\\quad)$</h3>\n<p>A. -2</p>\n<p>B. -1</p>\n<p>C. 1</p>\n<p>D. 2</p>",
+  "options": {
+    "A": "-2",
+    "B": "-1",
+    "C": "1",
+    "D": "2"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T09:22:49.125431+00:00",
+    "question_source_sha256": "3b66a6712b18cf29a48505581ccb4101bdac1d317dc48ad708df186a813b1f4f",
+    "solution_source_sha256": ""
+  }
+}

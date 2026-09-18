@@ -82,7 +82,7 @@ TARGET_LEVEL_BY_STAGE = {
     "transfer_variant": 4,
 }
 
-RECOMMENDATION_LOGIC_VERSION = "knowledge-teaching-chain-scoring-v1"
+RECOMMENDATION_LOGIC_VERSION = "knowledge-teaching-chain-scoring-v2"
 
 BLOCKING_FLAGS = {
     "missing_stem",
@@ -537,12 +537,68 @@ def _structure_novelty_score(
     }
 
 
+def _quality_feedback_rows(bank: Path) -> list[dict[str, Any]]:
+    path = bank / "generation" / "teacher_quality_feedback.jsonl"
+    if not path.exists():
+        return []
+    rows: list[dict[str, Any]] = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        try:
+            row = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(row, dict):
+            rows.append(row)
+    return rows
+
+
+def _feedback_penalty(
+    fingerprint: dict[str, Any], target_level: int, feedback_rows: list[dict[str, Any]] | None
+) -> tuple[float, list[str]]:
+    """Turn teacher feedback on the same pedagogical structure into a bounded ranking penalty."""
+    highest = 0.0
+    matches: list[str] = []
+    for row in feedback_rows or []:
+        previous = row.get("pedagogical_fingerprint")
+        if not isinstance(previous, dict):
+            continue
+        fields = ("knowledge", "question_type", "method_family", "task_intent", "reasoning_pattern")
+        if not all(fingerprint.get(field) and fingerprint.get(field) == previous.get(field) for field in fields):
+            continue
+        feedback_type = str(row.get("feedback_type") or "")
+        suggested_level = row.get("teacher_suggested_level")
+        try:
+            suggested_level = int(suggested_level) if suggested_level is not None else None
+        except (TypeError, ValueError):
+            suggested_level = None
+        penalty = {
+            "solution_error": 0.85,
+            "duplicate_structure": 1.0,
+            "unsuitable_training_value": 0.55,
+        }.get(feedback_type, 0.0)
+        if feedback_type == "difficulty_too_high" and (
+            suggested_level is None or target_level > suggested_level
+        ):
+            penalty = 0.60
+        if feedback_type == "difficulty_too_low" and (
+            suggested_level is None or target_level < suggested_level
+        ):
+            penalty = 0.60
+        if penalty:
+            highest = max(highest, penalty)
+            matches.append(feedback_type)
+    return round(highest, 3), sorted(set(matches))
+
+
 def _recommendation_score(
     *,
     profile: dict[str, Any],
     references: list[dict[str, Any]],
     fingerprint: dict[str, Any],
     estimated_level: int,
+    feedback_rows: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     source_score = _source_quality_score(references)
     stage_score = _stage_match_score(profile, estimated_level, fingerprint)
@@ -559,13 +615,13 @@ def _recommendation_score(
     if target_level >= 5 and (len(signals) < 3 or not _deep_difficulty_signal("", "", list(signals))):
         difficulty_score = min(difficulty_score, 0.25)
     novelty_score, duplication_risk, novelty_detail = _structure_novelty_score(fingerprint, references, profile)
-    feedback_penalty = 0.0
+    feedback_penalty, feedback_matches = _feedback_penalty(fingerprint, target_level, feedback_rows)
     score = (
         0.25 * source_score
         + 0.28 * stage_score
         + 0.24 * difficulty_score
         + 0.18 * novelty_score
-        - 0.05 * feedback_penalty
+        - 0.15 * feedback_penalty
         + 0.05
     )
     rationale = [
@@ -578,8 +634,10 @@ def _recommendation_score(
         rationale.append("与安全参考题的教学结构过近，实时生成时应换方法族、函数族或推理路径")
     if difficulty_score < 0.7:
         rationale.append("难度合同未完全匹配，不应直接标为通过")
+    if feedback_matches:
+        rationale.append(f"教师反馈命中：{'、'.join(feedback_matches)}，已降低候选优先级")
     return {
-        "schema_version": "recommendation-score-v1",
+        "schema_version": "recommendation-score-v2",
         "logic_version": RECOMMENDATION_LOGIC_VERSION,
         "score": round(max(0.0, min(1.0, score)), 3),
         "source_quality_score": source_score,
@@ -587,6 +645,7 @@ def _recommendation_score(
         "difficulty_match_score": difficulty_score,
         "structure_novelty_score": novelty_score,
         "feedback_penalty": feedback_penalty,
+        "feedback_matches": feedback_matches,
         "duplication_risk": duplication_risk,
         "novelty_detail": novelty_detail,
         "rationale": rationale,
@@ -604,6 +663,7 @@ def _candidate(
     references: list[dict[str, Any]],
     mastery: float | None,
     mastery_status: str,
+    feedback_rows: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     profile = PROFILES[index]
     knowledge_scope = scope == "knowledge_practice"
@@ -630,6 +690,7 @@ def _candidate(
         references=references[:3],
         fingerprint=fingerprint,
         estimated_level=estimated_level,
+        feedback_rows=feedback_rows,
     )
     difficulty_matches = recommendation["difficulty_match_score"] >= 0.7
     digest = hashlib.sha256(
@@ -730,6 +791,7 @@ def _teaching_chain_slot(
     bank_rows: list[dict[str, Any]],
     *,
     knowledge: str,
+    feedback_rows: list[dict[str, Any]] | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     template_number = TEMPLATE_NUMBER_BY_KNOWLEDGE[knowledge]
     references = _ordered_references(
@@ -751,6 +813,7 @@ def _teaching_chain_slot(
             references=references,
             mastery=None,
             mastery_status="knowledge_chain",
+            feedback_rows=feedback_rows,
         )
         for index, row in enumerate(candidate_rows)
     ]
@@ -819,7 +882,9 @@ def _teaching_chain_slot(
     return slot, teaching_chain
 
 
-def _build_knowledge_teaching_chains(bank: Path, bank_rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, str]]]:
+def _build_knowledge_teaching_chains(
+    bank: Path, bank_rows: list[dict[str, Any]], feedback_rows: list[dict[str, Any]] | None = None
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, str]]]:
     knowledge_order: list[str] = []
     for row in bank_rows:
         knowledge = _primary_knowledge(row)
@@ -830,7 +895,7 @@ def _build_knowledge_teaching_chains(bank: Path, bank_rows: list[dict[str, Any]]
     skipped: list[dict[str, str]] = []
     for knowledge in knowledge_order:
         try:
-            slot, chain = _teaching_chain_slot(bank_rows, knowledge=knowledge)
+            slot, chain = _teaching_chain_slot(bank_rows, knowledge=knowledge, feedback_rows=feedback_rows)
         except InsufficientSafeReferences as exc:
             skipped.append({"primary_knowledge": knowledge, "reason": str(exc)})
             continue
@@ -862,7 +927,10 @@ def generate_personalized_pool(bank: Path) -> dict[str, Any]:
         raise SystemExit(f"Tagged bank not found: {tags_path}")
     plan = json.loads(plan_path.read_text(encoding="utf-8")) if plan_path.exists() else {"students": []}
     bank_rows = json.loads(tags_path.read_text(encoding="utf-8"))
-    knowledge_slots, knowledge_chains, skipped_chains = _build_knowledge_teaching_chains(bank, bank_rows)
+    feedback_rows = _quality_feedback_rows(bank)
+    knowledge_slots, knowledge_chains, skipped_chains = _build_knowledge_teaching_chains(
+        bank, bank_rows, feedback_rows
+    )
     slots: list[dict[str, Any]] = list(knowledge_slots)
     skipped_slots: list[dict[str, str]] = []
 
@@ -924,6 +992,7 @@ def generate_personalized_pool(bank: Path) -> dict[str, Any]:
                     references=references,
                     mastery=mastery_row.get("mastery_score"),
                     mastery_status=str(mastery_row.get("status") or ""),
+                    feedback_rows=feedback_rows,
                 )
                 for index, row in enumerate(candidate_rows)
             ]

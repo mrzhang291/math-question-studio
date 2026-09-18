@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_a9e115aa7ff5_q006",
+  "display_id": "EXAM-A9E115AA7FF5-Q006",
+  "source_exam": "深圳中学 2024 级高二数学周测（4）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_3__新_caf9ca99_ocr\\02_深圳中学2024级高二周测_4.md",
+  "solution_file": "",
+  "question_number": 6,
+  "question_type": "single_choice",
+  "stem_markdown": "### 6. 若函数 $f(x) = \\frac{1}{2} x + \\cos x$ 在 $x \\in [0, a]$ 上存在唯一的极大值点，则实数 $a$ 的取值范围为（）\n\nA. $\\left(\\frac{\\pi}{6}, \\frac{13\\pi}{6}\\right]$\n\nB. $\\left[\\frac{\\pi}{6}, \\frac{13\\pi}{6}\\right)$\n\nC. $\\left(\\frac{13\\pi}{6}, \\frac{17\\pi}{6}\\right)$\n\nD. $\\left[\\frac{13\\pi}{6}, \\frac{17\\pi}{6}\\right]$",
+  "stem_html": "<h3>6. 若函数 $f(x) = \\frac{1}{2} x + \\cos x$ 在 $x \\in [0, a]$ 上存在唯一的极大值点，则实数 $a$ 的取值范围为（）</h3>\n<p>A. $\\left(\\frac{\\pi}{6}, \\frac{13\\pi}{6}\\right]$</p>\n<p>B. $\\left[\\frac{\\pi}{6}, \\frac{13\\pi}{6}\\right)$</p>\n<p>C. $\\left(\\frac{13\\pi}{6}, \\frac{17\\pi}{6}\\right)$</p>\n<p>D. $\\left[\\frac{13\\pi}{6}, \\frac{17\\pi}{6}\\right]$</p>",
+  "options": {
+    "A": "$\\left(\\frac{\\pi}{6}, \\frac{13\\pi}{6}\\right]$",
+    "B": "$\\left[\\frac{\\pi}{6}, \\frac{13\\pi}{6}\\right)$",
+    "C": "$\\left(\\frac{13\\pi}{6}, \\frac{17\\pi}{6}\\right)$",
+    "D": "$\\left[\\frac{13\\pi}{6}, \\frac{17\\pi}{6}\\right]$"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-10T11:54:25.385386+00:00",
+    "question_source_sha256": "3b66a6712b18cf29a48505581ccb4101bdac1d317dc48ad708df186a813b1f4f",
+    "solution_source_sha256": ""
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_a9e115aa7ff5_q002",
+  "display_id": "EXAM-A9E115AA7FF5-Q002",
+  "source_exam": "深圳中学 2024 级高二数学周测（4）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_3_eb00bedd_ocr\\02_深圳中学2024级高二周测_4.md",
+  "solution_file": "",
+  "question_number": 2,
+  "question_type": "single_choice",
+  "stem_markdown": "### 2. 设函数 $f(x) = \\frac{1}{x^2} + 1$ ，则 $\\lim_{\\Delta x \\to 0} \\frac{f(1 - 3\\Delta x) - f(1)}{\\Delta x} = (\\quad)$\n\nA. 3\n\nB. $\\frac{3}{2}$\n\nC. 6\n\nD. 0",
+  "stem_html": "<h3>2. 设函数 $f(x) = \\frac{1}{x^2} + 1$ ，则 $\\lim_{\\Delta x \\to 0} \\frac{f(1 - 3\\Delta x) - f(1)}{\\Delta x} = (\\quad)$</h3>\n<p>A. 3</p>\n<p>B. $\\frac{3}{2}$</p>\n<p>C. 6</p>\n<p>D. 0</p>",
+  "options": {
+    "A": "3",
+    "B": "$\\frac{3}{2}$",
+    "C": "6",
+    "D": "0"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T01:40:53.488608+00:00",
+    "question_source_sha256": "3b66a6712b18cf29a48505581ccb4101bdac1d317dc48ad708df186a813b1f4f",
+    "solution_source_sha256": ""
+  }
+}

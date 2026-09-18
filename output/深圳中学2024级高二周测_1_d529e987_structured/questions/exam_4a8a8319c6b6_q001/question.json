@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_4a8a8319c6b6_q001",
+  "display_id": "EXAM-4A8A8319C6B6-Q001",
+  "source_exam": "深圳中学 2024 级高二数学周测（1）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_1_d529e987_ocr\\01_深圳中学2024级高二周测_1.md",
+  "solution_file": "",
+  "question_number": 1,
+  "question_type": "single_choice",
+  "stem_markdown": "### 1. 一辆汽车在笔直的公路上行驶，位移关于时间的函数图象如图所示，给出下列四个结论：\n\n①汽车在 $[0,t_{1}]$ 时间段内每一时刻的瞬时速度相同；\n\n②汽车在 $[t_{1},t_{2}]$ 时间段内不断加速行驶；\n\n③汽车在 $[t_{2},t_{3}]$ 时间段内不断减速行驶；\n\n④汽车在 $t_{2}$ 时刻的瞬时速度小于 $t_{4}$ 时刻的瞬时速度.\n\n![](assets/29752970b65e025365092e3c6e87585541ca6e2922a77dd0da75b6417425ae1e.jpg)\n\n其中正确结论的个数有（）\nA. 1 个\n\nB. 2 个\n\nC. 3 个\n\nD. 4 个",
+  "stem_html": "<h3>1. 一辆汽车在笔直的公路上行驶，位移关于时间的函数图象如图所示，给出下列四个结论：</h3>\n<p>①汽车在 $[0,t_{1}]$ 时间段内每一时刻的瞬时速度相同；</p>\n<p>②汽车在 $[t_{1},t_{2}]$ 时间段内不断加速行驶；</p>\n<p>③汽车在 $[t_{2},t_{3}]$ 时间段内不断减速行驶；</p>\n<p>④汽车在 $t_{2}$ 时刻的瞬时速度小于 $t_{4}$ 时刻的瞬时速度.</p>\n<p><img alt=\"\" src=\"assets/29752970b65e025365092e3c6e87585541ca6e2922a77dd0da75b6417425ae1e.jpg\" /></p>\n<p>其中正确结论的个数有（）\nA. 1 个</p>\n<p>B. 2 个</p>\n<p>C. 3 个</p>\n<p>D. 4 个</p>",
+  "options": {
+    "A": "1 个",
+    "B": "2 个",
+    "C": "3 个",
+    "D": "4 个"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [
+    {
+      "original_ref": "images/29752970b65e025365092e3c6e87585541ca6e2922a77dd0da75b6417425ae1e.jpg",
+      "alt": "",
+      "saved": true,
+      "file_name": "29752970b65e025365092e3c6e87585541ca6e2922a77dd0da75b6417425ae1e.jpg",
+      "relative_path": "assets/29752970b65e025365092e3c6e87585541ca6e2922a77dd0da75b6417425ae1e.jpg",
+      "sha256": "c4a377f0f9c48029a753937a845fce8c59d0b34a8499de4a46ea976f5e653b93"
+    }
+  ],
+  "quality_flags": [
+    "contains_images",
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T09:06:33.849691+00:00",
+    "question_source_sha256": "792c0598f613c48e1cb160411bfdb4297a79c74daab446701006a1d3f8f24f16",
+    "solution_source_sha256": ""
+  }
+}

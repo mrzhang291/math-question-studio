@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_a9e115aa7ff5_q011",
+  "display_id": "EXAM-A9E115AA7FF5-Q011",
+  "source_exam": "深圳中学 2024 级高二数学周测（4）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_3_eb00bedd_ocr\\02_深圳中学2024级高二周测_4.md",
+  "solution_file": "",
+  "question_number": 11,
+  "question_type": "multiple_choice",
+  "stem_markdown": "### 11. 对于函数 $f(x) = \\frac{x}{\\ln x}$ ，下列说法正确的是（）\n\nA. $f(x)$ 在 $(0, \\mathrm{e})$ 上单调递减，在 $(\\mathrm{e}, +\\infty)$ 上单调递增\n\nB. $f(\\pi) < f(2)$\n\nC. 设 $g(x) = |f(x)| - 2k + 1$ 有3个不同的零点，则 $k > \\frac{\\mathrm{e} + 1}{2}$\n\nD. 若方程 $|f(|x|)| = k$ 有6个不等实数根，则 $k > \\mathrm{e}$\n\n#",
+  "stem_html": "<h3>11. 对于函数 $f(x) = \\frac{x}{\\ln x}$ ，下列说法正确的是（）</h3>\n<p>A. $f(x)$ 在 $(0, \\mathrm{e})$ 上单调递减，在 $(\\mathrm{e}, +\\infty)$ 上单调递增</p>\n<p>B. $f(\\pi) &lt; f(2)$</p>\n<p>C. 设 $g(x) = |f(x)| - 2k + 1$ 有3个不同的零点，则 $k &gt; \\frac{\\mathrm{e} + 1}{2}$</p>\n<p>D. 若方程 $|f(|x|)| = k$ 有6个不等实数根，则 $k &gt; \\mathrm{e}$</p>\n<h1></h1>",
+  "options": {
+    "A": "$f(x)$ 在 $(0, \\mathrm{e})$ 上单调递减，在 $(\\mathrm{e}, +\\infty)$ 上单调递增",
+    "B": "$f(\\pi) < f(2)$",
+    "C": "设 $g(x) = |f(x)| - 2k + 1$ 有3个不同的零点，则 $k > \\frac{\\mathrm{e} + 1}{2}$",
+    "D": "若方程 $|f(|x|)| = k$ 有6个不等实数根，则 $k > \\mathrm{e}$\n\n#"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 6,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T01:40:53.517870+00:00",
+    "question_source_sha256": "3b66a6712b18cf29a48505581ccb4101bdac1d317dc48ad708df186a813b1f4f",
+    "solution_source_sha256": ""
+  }
+}

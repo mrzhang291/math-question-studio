@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_4a8a8319c6b6_q002",
+  "display_id": "EXAM-4A8A8319C6B6-Q002",
+  "source_exam": "深圳中学 2024 级高二数学周测（1）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_1_d529e987_ocr\\01_深圳中学2024级高二周测_1.md",
+  "solution_file": "",
+  "question_number": 2,
+  "question_type": "single_choice",
+  "stem_markdown": "### 2. 函数 $f(x) = x^{2} - x$ 在区间[1,3]上的平均变化率为（）\n\nA. 6\n\nB. 3\n\nC. 2\n\nD. 1",
+  "stem_html": "<h3>2. 函数 $f(x) = x^{2} - x$ 在区间[1,3]上的平均变化率为（）</h3>\n<p>A. 6</p>\n<p>B. 3</p>\n<p>C. 2</p>\n<p>D. 1</p>",
+  "options": {
+    "A": "6",
+    "B": "3",
+    "C": "2",
+    "D": "1"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T09:06:33.853011+00:00",
+    "question_source_sha256": "792c0598f613c48e1cb160411bfdb4297a79c74daab446701006a1d3f8f24f16",
+    "solution_source_sha256": ""
+  }
+}

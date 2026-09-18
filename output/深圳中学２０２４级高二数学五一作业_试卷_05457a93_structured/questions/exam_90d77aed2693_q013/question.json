@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_90d77aed2693_q013",
+  "display_id": "EXAM-90D77AED2693-Q013",
+  "source_exam": "深圳中学 2024 级高二数学 五一作业",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学２０２４级高二数学五一作业_试卷_05457a93_ocr\\01_深圳中学２０２４级高二数学五一作业_试卷.md",
+  "solution_file": "",
+  "question_number": 13,
+  "question_type": "fill_blank",
+  "stem_markdown": "### 13. 若函数 $f(x) = \\ln x$ 与函数 $g(x) = ax^2 (a > 0)$ 有两个公切线，则实数 $a$ 取值范围是 \\_\\_\\_\\_.",
+  "stem_html": "<h3>13. 若函数 $f(x) = \\ln x$ 与函数 $g(x) = ax^2 (a &gt; 0)$ 有两个公切线，则实数 $a$ 取值范围是 ____.</h3>",
+  "options": {},
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": null,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-10T07:15:52.052455+00:00",
+    "question_source_sha256": "15514af6ceb54dc08cbfc8100c7df26b356cb6688fdd3bfe5c4f436c61261dd5",
+    "solution_source_sha256": ""
+  }
+}

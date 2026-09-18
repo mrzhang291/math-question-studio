@@ -21,6 +21,8 @@
 
 `attempted: false` 表示没有掌握度证据，不得算作答错。
 
+`student/student_mastery.jsonl` 的新记录使用 `student-mastery-v3`：保留兼容字段 `mastery_score` 与 `status`，并新增 `mastery_model: bkt-beta-blend-v1`、`beta_mastery_score`、`bkt_mastery_score`、`mastery_uncertainty` 和 `bkt_blend_weight`。二值或部分得分作答先更新 Beta 后验与保守 BKT 状态，再按证据量融合；模拟作答只可用于演示，不得作为真实参数校准样本。
+
 ## 原题错题集
 
 `paper/class_paper.json` 在本产品中是班级原题错题集计划，不是生成新题卷。顶层至少包含：
@@ -160,6 +162,8 @@
 `generation/student_generated_question_candidates.json` 和 `generated-question-candidate-pool-v1` 是兼容载体。新版本应优先写入 `scope: knowledge_practice` 槽位，作为按知识点模式的教学链预览和任务单来源；`scope: student_practice` 只在存在真实或模拟学生计划时写入。该文件不代表教师点击按钮后刚刚完成的实时生成，也不得进入活跃批次、校验统计或试卷。
 
 每个槽位应写入 `recommendation_logic_version` 和 `candidate_ranking`。每道候选题必须写入 `generation.pedagogical_fingerprint`、`generation.recommendation_score`、`generation.difficulty_contract`、`verification.estimated_level`、`verification.difficulty_matches`、`verification.difficulty_gate_evidence` 与 `verification.answer_solution_consistency: passed`。`recommendation_score` 至少包含 `source_quality_score`、`stage_match_score`、`difficulty_match_score`、`structure_novelty_score`、`feedback_penalty`、`duplication_risk` 和 `rationale`。这些字段用于教师端预览、任务单规划和实时生成前的结构换题；若 `difficulty_matches` 为 `false`，不得把缓存候选当作已通过新题。
+
+`recommendation-score-v2` 还写入 `feedback_matches`。它只对知识点、题型、方法族、任务意图和推理路径均相同的教师负反馈施加扣分；`duplicate_structure`、`solution_error`、训练价值问题与方向相符的难度反馈会降低排序，但不替代实时生成的数学正确性和难度硬门。
 
 `generation/knowledge_teaching_chains.json` 至少包含：
 

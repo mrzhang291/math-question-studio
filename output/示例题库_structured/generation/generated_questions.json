@@ -1,7 +1,1533 @@
 {
   "schema_version": "generated-question-set-v1",
-  "generated_at": "2026-08-05T03:33:11.088236+00:00",
-  "scope": "class_source_wrong_question_set",
-  "status": "not_applicable_source_questions_are_delivered_directly",
-  "questions": []
+  "generated_at": "2026-09-13T12:59:31.307289+00:00",
+  "scope": "student_practice",
+  "status": "teacher_reference_pending_review",
+  "questions": [
+    {
+      "question_id": "teacher_reference_k1_q1",
+      "display_id": "教师参考新题 K1-Q1",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "single_choice",
+      "primary_knowledge": "导数与微分·求导运算·基本函数求导",
+      "stem_markdown": "设 f(x)=x^4-3x^2+1，则 f'(1) 等于（ ）。\nA. -2    B. 0    C. 1    D. 2",
+      "answer": "A",
+      "solution_markdown": "f'(x)=4x^3-6x，故 f'(1)=4-6=-2，选 A。",
+      "personalization": {
+        "target_level": 1,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "1级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k1_q1_1",
+        "anchor_question_id": "teacher_anchor_k1_q1_1",
+        "reference_question_ids": [
+          "teacher_anchor_k1_q1_1",
+          "teacher_anchor_k1_q1_2",
+          "teacher_anchor_k1_q1_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k1_q1_1",
+          "teacher_anchor_k1_q1_2",
+          "teacher_anchor_k1_q1_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "A",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 1,
+        "estimated_level": 1,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k1_q2",
+      "display_id": "教师参考新题 K1-Q2",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "fill_blank",
+      "primary_knowledge": "导数与微分·求导运算·基本函数求导",
+      "stem_markdown": "设 f(x)=e^x(x^2+1)，则 f'(0)=____。",
+      "answer": "1",
+      "solution_markdown": "乘积求导：f'(x)=e^x(x^2+2x+1)=e^x(x+1)^2，代入 0 得 1。",
+      "personalization": {
+        "target_level": 2,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "2级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k1_q2_1",
+        "anchor_question_id": "teacher_anchor_k1_q2_1",
+        "reference_question_ids": [
+          "teacher_anchor_k1_q2_1",
+          "teacher_anchor_k1_q2_2",
+          "teacher_anchor_k1_q2_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k1_q2_1",
+          "teacher_anchor_k1_q2_2",
+          "teacher_anchor_k1_q2_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "1",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 2,
+        "estimated_level": 2,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k1_q3",
+      "display_id": "教师参考新题 K1-Q3",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "multiple_choice",
+      "primary_knowledge": "导数与微分·求导运算·基本函数求导",
+      "stem_markdown": "已知 f(x)=x ln x（x>0），下列结论正确的是（ ）。\nA. f'(x)=ln x+1\nB. f'(1)=0\nC. f''(x)=1/x\nD. f(x) 在 (0,+infinity) 上递增",
+      "answer": "A、C",
+      "solution_markdown": "由乘积求导得 f'(x)=ln x+1，故 A 对、f'(1)=1，B 错；再求导得 f''(x)=1/x，C 对。f'(x) 在 (0,e^(-1)) 为负，D 错。",
+      "personalization": {
+        "target_level": 3,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "3级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k1_q3_1",
+        "anchor_question_id": "teacher_anchor_k1_q3_1",
+        "reference_question_ids": [
+          "teacher_anchor_k1_q3_1",
+          "teacher_anchor_k1_q3_2",
+          "teacher_anchor_k1_q3_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k1_q3_1",
+          "teacher_anchor_k1_q3_2",
+          "teacher_anchor_k1_q3_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "A、C",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 3,
+        "estimated_level": 3,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k1_q4",
+      "display_id": "教师参考新题 K1-Q4",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "solution",
+      "primary_knowledge": "导数与微分·求导运算·基本函数求导",
+      "stem_markdown": "已知 f(x)=(x^2+1)e^x。求曲线 y=f(x) 在 x=0 处的切线方程，并求该切线在 x=1 时的函数值。",
+      "answer": "切线 y=x+1；取值为 2",
+      "solution_markdown": "f'(x)=e^x(x^2+2x+1)=e^x(x+1)^2。f(0)=1，f'(0)=1，所以切线 y-1=x，即 y=x+1；代入 x=1 得 2。",
+      "personalization": {
+        "target_level": 4,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "4级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k1_q4_1",
+        "anchor_question_id": "teacher_anchor_k1_q4_1",
+        "reference_question_ids": [
+          "teacher_anchor_k1_q4_1",
+          "teacher_anchor_k1_q4_2",
+          "teacher_anchor_k1_q4_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k1_q4_1",
+          "teacher_anchor_k1_q4_2",
+          "teacher_anchor_k1_q4_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "切线 y=x+1；取值为 2",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 4,
+        "estimated_level": 4,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k1_q5",
+      "display_id": "教师参考新题 K1-Q5",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "single_choice",
+      "primary_knowledge": "导数与微分·求导运算·基本函数求导",
+      "stem_markdown": "曲线 y=x^3-3x^2+2 的一条切线经过点 (1,0)，该切线方程是（ ）。\nA. y=3x-3    B. y=-3x+3    C. y=-3x+2    D. y=x-1",
+      "answer": "B",
+      "solution_markdown": "设切点横坐标为 t。由 f(t)+f'(t)(1-t)=0 可化为 -2(t-1)^3=0，故 t=1。此时 f(1)=0，f'(1)=-3，切线为 y=-3(x-1)。",
+      "personalization": {
+        "target_level": 5,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "5级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k1_q5_1",
+        "anchor_question_id": "teacher_anchor_k1_q5_1",
+        "reference_question_ids": [
+          "teacher_anchor_k1_q5_1",
+          "teacher_anchor_k1_q5_2",
+          "teacher_anchor_k1_q5_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k1_q5_1",
+          "teacher_anchor_k1_q5_2",
+          "teacher_anchor_k1_q5_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "B",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 5,
+        "estimated_level": 5,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k2_q1",
+      "display_id": "教师参考新题 K2-Q1",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "fill_blank",
+      "primary_knowledge": "导数应用·单调性·判断单调区间",
+      "stem_markdown": "函数 f(x)=3x-5 的递增区间为____。",
+      "answer": "(-infinity,+infinity)",
+      "solution_markdown": "f'(x)=3>0，因此函数在实数范围内单调递增。",
+      "personalization": {
+        "target_level": 1,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "1级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k2_q1_1",
+        "anchor_question_id": "teacher_anchor_k2_q1_1",
+        "reference_question_ids": [
+          "teacher_anchor_k2_q1_1",
+          "teacher_anchor_k2_q1_2",
+          "teacher_anchor_k2_q1_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k2_q1_1",
+          "teacher_anchor_k2_q1_2",
+          "teacher_anchor_k2_q1_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "(-infinity,+infinity)",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 1,
+        "estimated_level": 1,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k2_q2",
+      "display_id": "教师参考新题 K2-Q2",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "single_choice",
+      "primary_knowledge": "导数应用·单调性·判断单调区间",
+      "stem_markdown": "函数 f(x)=x^2+2x 的递减区间为（ ）。\nA. (-infinity,-1)    B. (-1,+infinity)    C. (-infinity,1)    D. (1,+infinity)",
+      "answer": "A",
+      "solution_markdown": "f'(x)=2x+2。x<-1 时 f'(x)<0，x>-1 时 f'(x)>0，故选 A。",
+      "personalization": {
+        "target_level": 2,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "2级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k2_q2_1",
+        "anchor_question_id": "teacher_anchor_k2_q2_1",
+        "reference_question_ids": [
+          "teacher_anchor_k2_q2_1",
+          "teacher_anchor_k2_q2_2",
+          "teacher_anchor_k2_q2_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k2_q2_1",
+          "teacher_anchor_k2_q2_2",
+          "teacher_anchor_k2_q2_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "A",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 2,
+        "estimated_level": 2,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k2_q3",
+      "display_id": "教师参考新题 K2-Q3",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "solution",
+      "primary_knowledge": "导数应用·单调性·判断单调区间",
+      "stem_markdown": "求 f(x)=x^3-3x^2+1 的单调区间。",
+      "answer": "递增：(-infinity,0) 与 (2,+infinity)；递减：(0,2)",
+      "solution_markdown": "f'(x)=3x(x-2)。作符号表：x<0 时正，0<x<2 时负，x>2 时正，故得所求区间。",
+      "personalization": {
+        "target_level": 3,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "3级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k2_q3_1",
+        "anchor_question_id": "teacher_anchor_k2_q3_1",
+        "reference_question_ids": [
+          "teacher_anchor_k2_q3_1",
+          "teacher_anchor_k2_q3_2",
+          "teacher_anchor_k2_q3_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k2_q3_1",
+          "teacher_anchor_k2_q3_2",
+          "teacher_anchor_k2_q3_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "递增：(-infinity,0) 与 (2,+infinity)；递减：(0,2)",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 3,
+        "estimated_level": 3,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k2_q4",
+      "display_id": "教师参考新题 K2-Q4",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "multiple_choice",
+      "primary_knowledge": "导数应用·单调性·判断单调区间",
+      "stem_markdown": "设 f(x)=ln x-x/3（x>0），下列结论正确的是（ ）。\nA. f(x) 在 (0,3) 上递增\nB. f(x) 在 (3,+infinity) 上递减\nC. f(x) 的最大值为 ln 3-1\nD. f(x) 存在最小值",
+      "answer": "A、B、C",
+      "solution_markdown": "f'(x)=1/x-1/3=(3-x)/(3x)。所以 A、B 正确，x=3 处取最大值 ln3-1。x 趋于无穷时函数趋于负无穷，故 D 错。",
+      "personalization": {
+        "target_level": 4,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "4级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k2_q4_1",
+        "anchor_question_id": "teacher_anchor_k2_q4_1",
+        "reference_question_ids": [
+          "teacher_anchor_k2_q4_1",
+          "teacher_anchor_k2_q4_2",
+          "teacher_anchor_k2_q4_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k2_q4_1",
+          "teacher_anchor_k2_q4_2",
+          "teacher_anchor_k2_q4_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "A、B、C",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 4,
+        "estimated_level": 4,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k2_q5",
+      "display_id": "教师参考新题 K2-Q5",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "single_choice",
+      "primary_knowledge": "导数应用·单调性·判断单调区间",
+      "stem_markdown": "设 a>0，f_a(x)=ln x+a/x（x>0）。其单调性是（ ）。\nA. 在 (0,+infinity) 上递增\nB. 在 (0,a) 上递增、(a,+infinity) 上递减\nC. 在 (0,a) 上递减、(a,+infinity) 上递增\nD. 与 a 无关",
+      "answer": "C",
+      "solution_markdown": "f'_a(x)=(x-a)/x^2。分母恒正，导数在 x<a 时为负、x>a 时为正，选 C。",
+      "personalization": {
+        "target_level": 5,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "5级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k2_q5_1",
+        "anchor_question_id": "teacher_anchor_k2_q5_1",
+        "reference_question_ids": [
+          "teacher_anchor_k2_q5_1",
+          "teacher_anchor_k2_q5_2",
+          "teacher_anchor_k2_q5_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k2_q5_1",
+          "teacher_anchor_k2_q5_2",
+          "teacher_anchor_k2_q5_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "C",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 5,
+        "estimated_level": 5,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k3_q1",
+      "display_id": "教师参考新题 K3-Q1",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "multiple_choice",
+      "primary_knowledge": "导数应用·极值与最值·求极值",
+      "stem_markdown": "对 f(x)=x^2-6x+8，下列结论正确的是（ ）。\nA. x=3 时取得最小值\nB. 最小值为 1\nC. 在 (-infinity,3) 上递减\nD. 在 (3,+infinity) 上递增",
+      "answer": "A、C、D",
+      "solution_markdown": "f'(x)=2x-6，故 x=3 处由负变正，取最小值 f(3)=-1。A、C、D 对，B 错。",
+      "personalization": {
+        "target_level": 1,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "1级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k3_q1_1",
+        "anchor_question_id": "teacher_anchor_k3_q1_1",
+        "reference_question_ids": [
+          "teacher_anchor_k3_q1_1",
+          "teacher_anchor_k3_q1_2",
+          "teacher_anchor_k3_q1_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k3_q1_1",
+          "teacher_anchor_k3_q1_2",
+          "teacher_anchor_k3_q1_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "A、C、D",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 1,
+        "estimated_level": 1,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k3_q2",
+      "display_id": "教师参考新题 K3-Q2",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "fill_blank",
+      "primary_knowledge": "导数应用·极值与最值·求极值",
+      "stem_markdown": "函数 f(x)=x^3-3x 的极大值为____。",
+      "answer": "2",
+      "solution_markdown": "f'(x)=3(x-1)(x+1)。x=-1 处导数由正变负，极大值为 f(-1)=2。",
+      "personalization": {
+        "target_level": 2,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "2级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k3_q2_1",
+        "anchor_question_id": "teacher_anchor_k3_q2_1",
+        "reference_question_ids": [
+          "teacher_anchor_k3_q2_1",
+          "teacher_anchor_k3_q2_2",
+          "teacher_anchor_k3_q2_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k3_q2_1",
+          "teacher_anchor_k3_q2_2",
+          "teacher_anchor_k3_q2_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "2",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 2,
+        "estimated_level": 2,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k3_q3",
+      "display_id": "教师参考新题 K3-Q3",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "single_choice",
+      "primary_knowledge": "导数应用·极值与最值·求极值",
+      "stem_markdown": "$f(x)=x^2+\\frac{8}{x}$（$x>0$）的最小值为（ ）。\nA. $3\\cdot 2^{\\frac{2}{3}}$    B. $3\\cdot 2^{\\frac{4}{3}}$    C. $4$    D. $6$",
+      "answer": "B",
+      "solution_markdown": "$f'(x)=2x-\\frac{8}{x^2}$。令 $f'(x)=0$ 得 $x^3=4$。导数先负后正，最小值为 $4^{\\frac{2}{3}}+\\frac{8}{4^{\\frac{1}{3}}}=3\\cdot 2^{\\frac{4}{3}}$，选 B。",
+      "personalization": {
+        "target_level": 3,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "3级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k3_q3_1",
+        "anchor_question_id": "teacher_anchor_k3_q3_1",
+        "reference_question_ids": [
+          "teacher_anchor_k3_q3_1",
+          "teacher_anchor_k3_q3_2",
+          "teacher_anchor_k3_q3_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k3_q3_1",
+          "teacher_anchor_k3_q3_2",
+          "teacher_anchor_k3_q3_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "B",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 3,
+        "estimated_level": 3,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k3_q4",
+      "display_id": "教师参考新题 K3-Q4",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "solution",
+      "primary_knowledge": "导数应用·极值与最值·求极值",
+      "stem_markdown": "求 f(x)=x^3-6x^2+9x+1 在区间 [0,4] 上的最大值与最小值。",
+      "answer": "最大值 5；最小值 1",
+      "solution_markdown": "f'(x)=3(x-1)(x-3)。比较端点与驻点：f(0)=1，f(1)=5，f(3)=1，f(4)=5。因此最大值为 5，最小值为 1。",
+      "personalization": {
+        "target_level": 4,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "4级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k3_q4_1",
+        "anchor_question_id": "teacher_anchor_k3_q4_1",
+        "reference_question_ids": [
+          "teacher_anchor_k3_q4_1",
+          "teacher_anchor_k3_q4_2",
+          "teacher_anchor_k3_q4_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k3_q4_1",
+          "teacher_anchor_k3_q4_2",
+          "teacher_anchor_k3_q4_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "最大值 5；最小值 1",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 4,
+        "estimated_level": 4,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k3_q5",
+      "display_id": "教师参考新题 K3-Q5",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "multiple_choice",
+      "primary_knowledge": "导数应用·极值与最值·求极值",
+      "stem_markdown": "$a>0$，$f(x)=x^2+\\frac{a}{x}$（$x>0$）。下列结论正确的是（ ）。\nA. 最小值在 $x=(\\frac{a}{2})^{\\frac{1}{3}}$ 处取得\nB. 最小值为 $3(\\frac{a}{2})^{\\frac{2}{3}}$\nC. 最小值为 $6$ 时，$a=4\\sqrt{2}$\nD. $a$ 增大时，最小值减小",
+      "answer": "A、B、C",
+      "solution_markdown": "$f'(x)=2x-\\frac{a}{x^2}$，令其为零得 $x=(\\frac{a}{2})^{\\frac{1}{3}}$。代入得最小值 $3(\\frac{a}{2})^{\\frac{2}{3}}$。令其等于 $6$ 解得 $a=4\\sqrt{2}$。最小值随 $a$ 增大而增大，D 错。",
+      "personalization": {
+        "target_level": 5,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "5级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k3_q5_1",
+        "anchor_question_id": "teacher_anchor_k3_q5_1",
+        "reference_question_ids": [
+          "teacher_anchor_k3_q5_1",
+          "teacher_anchor_k3_q5_2",
+          "teacher_anchor_k3_q5_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k3_q5_1",
+          "teacher_anchor_k3_q5_2",
+          "teacher_anchor_k3_q5_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "A、B、C",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 5,
+        "estimated_level": 5,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k4_q1",
+      "display_id": "教师参考新题 K4-Q1",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "single_choice",
+      "primary_knowledge": "导数应用·不等式证明·构造函数证明",
+      "stem_markdown": "要证明 ln x <= x-1（x>0），适宜构造的函数是（ ）。\nA. f(x)=x-1-ln x\nB. f(x)=x+1+ln x\nC. f(x)=ln x-x\nD. f(x)=x ln x",
+      "answer": "A",
+      "solution_markdown": "将目标不等式移项为 x-1-ln x>=0，故构造 A。",
+      "personalization": {
+        "target_level": 1,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "1级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k4_q1_1",
+        "anchor_question_id": "teacher_anchor_k4_q1_1",
+        "reference_question_ids": [
+          "teacher_anchor_k4_q1_1",
+          "teacher_anchor_k4_q1_2",
+          "teacher_anchor_k4_q1_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k4_q1_1",
+          "teacher_anchor_k4_q1_2",
+          "teacher_anchor_k4_q1_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "A",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 1,
+        "estimated_level": 1,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k4_q2",
+      "display_id": "教师参考新题 K4-Q2",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "fill_blank",
+      "primary_knowledge": "导数应用·不等式证明·构造函数证明",
+      "stem_markdown": "设 f(x)=x-1-ln x（x>0），则 f'(x)=____。",
+      "answer": "(x-1)/x",
+      "solution_markdown": "直接求导 f'(x)=1-1/x=(x-1)/x。该形式便于用 x=1 作符号分界。",
+      "personalization": {
+        "target_level": 2,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "2级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k4_q2_1",
+        "anchor_question_id": "teacher_anchor_k4_q2_1",
+        "reference_question_ids": [
+          "teacher_anchor_k4_q2_1",
+          "teacher_anchor_k4_q2_2",
+          "teacher_anchor_k4_q2_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k4_q2_1",
+          "teacher_anchor_k4_q2_2",
+          "teacher_anchor_k4_q2_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "(x-1)/x",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 2,
+        "estimated_level": 2,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k4_q3",
+      "display_id": "教师参考新题 K4-Q3",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "solution",
+      "primary_knowledge": "导数应用·不等式证明·构造函数证明",
+      "stem_markdown": "证明：对任意 x>0，有 ln x <= x-1。",
+      "answer": "见解析",
+      "solution_markdown": "令 f(x)=x-1-ln x。f'(x)=(x-1)/x，所以 f 在 (0,1) 递减、在 (1,+infinity) 递增，最小值为 f(1)=0。因此 f(x)>=0，即 ln x<=x-1。",
+      "personalization": {
+        "target_level": 3,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "3级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k4_q3_1",
+        "anchor_question_id": "teacher_anchor_k4_q3_1",
+        "reference_question_ids": [
+          "teacher_anchor_k4_q3_1",
+          "teacher_anchor_k4_q3_2",
+          "teacher_anchor_k4_q3_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k4_q3_1",
+          "teacher_anchor_k4_q3_2",
+          "teacher_anchor_k4_q3_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "见解析",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 3,
+        "estimated_level": 3,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k4_q4",
+      "display_id": "教师参考新题 K4-Q4",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "multiple_choice",
+      "primary_knowledge": "导数应用·不等式证明·构造函数证明",
+      "stem_markdown": "设 f(x)=x-ln x（x>0），下列结论正确的是（ ）。\nA. f(x) 在 x=1 处取最小值\nB. f(x)>=1\nC. ln x<=x-1\nD. ln x>=x-1",
+      "answer": "A、B、C",
+      "solution_markdown": "f'(x)=1-1/x，x=1 处由负变正，f(1)=1，故 A、B 对。f(x)>=1 等价于 ln x<=x-1，C 对，D 错。",
+      "personalization": {
+        "target_level": 4,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "4级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k4_q4_1",
+        "anchor_question_id": "teacher_anchor_k4_q4_1",
+        "reference_question_ids": [
+          "teacher_anchor_k4_q4_1",
+          "teacher_anchor_k4_q4_2",
+          "teacher_anchor_k4_q4_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k4_q4_1",
+          "teacher_anchor_k4_q4_2",
+          "teacher_anchor_k4_q4_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "A、B、C",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 4,
+        "estimated_level": 4,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k4_q5",
+      "display_id": "教师参考新题 K4-Q5",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "solution",
+      "primary_knowledge": "导数应用·不等式证明·构造函数证明",
+      "stem_markdown": "证明：当 a>0 时，ln(1+a)>a/(1+a)。",
+      "answer": "见解析",
+      "solution_markdown": "令 g(a)=ln(1+a)-a/(1+a)。g(0)=0，且 g'(a)=1/(1+a)-1/(1+a)^2=a/(1+a)^2>0。因此 a>0 时 g(a)>0，原不等式成立。",
+      "personalization": {
+        "target_level": 5,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "5级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k4_q5_1",
+        "anchor_question_id": "teacher_anchor_k4_q5_1",
+        "reference_question_ids": [
+          "teacher_anchor_k4_q5_1",
+          "teacher_anchor_k4_q5_2",
+          "teacher_anchor_k4_q5_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k4_q5_1",
+          "teacher_anchor_k4_q5_2",
+          "teacher_anchor_k4_q5_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "见解析",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 5,
+        "estimated_level": 5,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k5_q1",
+      "display_id": "教师参考新题 K5-Q1",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "single_choice",
+      "primary_knowledge": "概率统计·概率模型·全概率公式",
+      "stem_markdown": "甲、乙两箱被选中的概率分别为 0.3、0.7；从甲、乙箱抽到红球的概率分别为 0.4、0.1。随机选一箱抽一球，抽到红球的概率为（ ）。\nA. 0.13    B. 0.19    C. 0.28    D. 0.40",
+      "answer": "B",
+      "solution_markdown": "按选箱来源分解：P(红)=0.3*0.4+0.7*0.1=0.19，选 B。",
+      "personalization": {
+        "target_level": 1,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "1级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k5_q1_1",
+        "anchor_question_id": "teacher_anchor_k5_q1_1",
+        "reference_question_ids": [
+          "teacher_anchor_k5_q1_1",
+          "teacher_anchor_k5_q1_2",
+          "teacher_anchor_k5_q1_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k5_q1_1",
+          "teacher_anchor_k5_q1_2",
+          "teacher_anchor_k5_q1_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "B",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 1,
+        "estimated_level": 1,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k5_q2",
+      "display_id": "教师参考新题 K5-Q2",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "fill_blank",
+      "primary_knowledge": "概率统计·概率模型·全概率公式",
+      "stem_markdown": "生产线 A、B 的产量占比分别为 0.4、0.6，次品率分别为 0.05、0.02。随机抽取一件产品，抽到次品的概率为____。",
+      "answer": "0.032",
+      "solution_markdown": "P(次品)=0.4*0.05+0.6*0.02=0.032。",
+      "personalization": {
+        "target_level": 2,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "2级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k5_q2_1",
+        "anchor_question_id": "teacher_anchor_k5_q2_1",
+        "reference_question_ids": [
+          "teacher_anchor_k5_q2_1",
+          "teacher_anchor_k5_q2_2",
+          "teacher_anchor_k5_q2_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k5_q2_1",
+          "teacher_anchor_k5_q2_2",
+          "teacher_anchor_k5_q2_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "0.032",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 2,
+        "estimated_level": 2,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k5_q3",
+      "display_id": "教师参考新题 K5-Q3",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "multiple_choice",
+      "primary_knowledge": "概率统计·概率模型·全概率公式",
+      "stem_markdown": "A、B 两组学生占比分别为 0.25、0.75，及格率分别为 0.8、0.6。下列结论正确的是（ ）。\nA. 随机学生及格概率为 0.65\nB. 已知及格，该生来自 A 组的概率为 4/13\nC. 已知及格，该生来自 B 组的概率为 9/13\nD. 已知来自 B 组，该生及格概率为 0.75",
+      "answer": "A、B、C",
+      "solution_markdown": "P(及格)=0.25*0.8+0.75*0.6=0.65。P(A|及格)=0.2/0.65=4/13，B 组条件概率为 9/13。P(及格|B)=0.6，D 错。",
+      "personalization": {
+        "target_level": 3,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "3级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k5_q3_1",
+        "anchor_question_id": "teacher_anchor_k5_q3_1",
+        "reference_question_ids": [
+          "teacher_anchor_k5_q3_1",
+          "teacher_anchor_k5_q3_2",
+          "teacher_anchor_k5_q3_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k5_q3_1",
+          "teacher_anchor_k5_q3_2",
+          "teacher_anchor_k5_q3_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "A、B、C",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 3,
+        "estimated_level": 3,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k5_q4",
+      "display_id": "教师参考新题 K5-Q4",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "solution",
+      "primary_knowledge": "概率统计·概率模型·全概率公式",
+      "stem_markdown": "某病患病率为 0.01，检测灵敏度 P(阳性|患病)=0.90，假阳性率 P(阳性|未患病)=0.04。检测阳性者实际患病的概率是多少？",
+      "answer": "5/27，约 18.52%",
+      "solution_markdown": "P(阳性)=0.01*0.90+0.99*0.04=0.0486。由贝叶斯公式，P(患病|阳性)=0.009/0.0486=5/27，约为 18.52%。",
+      "personalization": {
+        "target_level": 4,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "4级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k5_q4_1",
+        "anchor_question_id": "teacher_anchor_k5_q4_1",
+        "reference_question_ids": [
+          "teacher_anchor_k5_q4_1",
+          "teacher_anchor_k5_q4_2",
+          "teacher_anchor_k5_q4_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k5_q4_1",
+          "teacher_anchor_k5_q4_2",
+          "teacher_anchor_k5_q4_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "5/27，约 18.52%",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 4,
+        "estimated_level": 4,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    },
+    {
+      "question_id": "teacher_reference_k5_q5",
+      "display_id": "教师参考新题 K5-Q5",
+      "is_generated": true,
+      "student_visible": false,
+      "scope": "student_practice",
+      "student_id": "KNOWLEDGE",
+      "question_type": "single_choice",
+      "primary_knowledge": "概率统计·概率模型·全概率公式",
+      "stem_markdown": "供应商 A、B、C 的供货占比分别为 0.1、0.4、0.5，次品率分别为 0.02、0.01、0.05。已知产品为次品，它来自 C 的概率为（ ）。\nA. 5/31    B. 25/31    C. 1/2    D. 25/50",
+      "answer": "B",
+      "solution_markdown": "P(次品)=0.1*0.02+0.4*0.01+0.5*0.05=0.031。P(C|次品)=0.025/0.031=25/31，选 B。",
+      "personalization": {
+        "target_level": 5,
+        "difficulty_key": "teacher_reference",
+        "difficulty_label": "5级",
+        "training_focus": "教师参考样题"
+      },
+      "generation": {
+        "mother_question_id": "teacher_anchor_k5_q5_1",
+        "anchor_question_id": "teacher_anchor_k5_q5_1",
+        "reference_question_ids": [
+          "teacher_anchor_k5_q5_1",
+          "teacher_anchor_k5_q5_2",
+          "teacher_anchor_k5_q5_3"
+        ],
+        "reference_count": 3,
+        "diagnostic_evidence_question_ids": [
+          "teacher_anchor_k5_q5_1",
+          "teacher_anchor_k5_q5_2",
+          "teacher_anchor_k5_q5_3"
+        ],
+        "diagnostic_evidence_count": 3,
+        "fulltext_anchor_count": 1,
+        "strategy": "teacher_reference_single_anchor",
+        "changed_dimensions": [
+          "question_angle",
+          "condition_organization",
+          "reasoning_path"
+        ],
+        "novelty_review": "passed",
+        "generator": "smart-question-recommender-safety-blueprint-teacher-reference-v1",
+        "generated_at": "2026-09-13T12:59:31.300168+00:00",
+        "mode": "knowledge",
+        "reference_note": "独立生成教师参考题；训练锚点仅用于说明知识与能力目标。"
+      },
+      "verification": {
+        "checked_from_stem_only": true,
+        "independent_answer": "B",
+        "answer_matches": true,
+        "answer_solution_consistency": "passed",
+        "difficulty_matches": true,
+        "target_level": 5,
+        "estimated_level": 5,
+        "status": "passed",
+        "notes": "教师参考样题已按题干、答案与解析进行一致性检查；仍需教师教学复核。"
+      },
+      "teacher_review": {
+        "status": "pending"
+      }
+    }
+  ]
 }

@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_90d77aed2693_q012",
+  "display_id": "EXAM-90D77AED2693-Q012",
+  "source_exam": "深圳中学 2024 级高二数学 五一作业",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学２０２４级高二数学五一作业_试卷_2edb8672_ocr\\01_深圳中学２０２４级高二数学五一作业_试卷.md",
+  "solution_file": "",
+  "question_number": 12,
+  "question_type": "fill_blank",
+  "stem_markdown": "### 12. 函数 $f(x) = \\frac{1}{2} x - \\sin x$ 在 $\\left[0, \\frac{\\pi}{2}\\right]$ 上的最大值为 \\_\\_\\_\\_.",
+  "stem_html": "<h3>12. 函数 $f(x) = \\frac{1}{2} x - \\sin x$ 在 $\\left[0, \\frac{\\pi}{2}\\right]$ 上的最大值为 ____.</h3>",
+  "options": {},
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": null,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-10T08:14:07.608174+00:00",
+    "question_source_sha256": "15514af6ceb54dc08cbfc8100c7df26b356cb6688fdd3bfe5c4f436c61261dd5",
+    "solution_source_sha256": ""
+  }
+}

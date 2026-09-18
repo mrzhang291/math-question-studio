@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_a9e115aa7ff5_q014",
+  "display_id": "EXAM-A9E115AA7FF5-Q014",
+  "source_exam": "深圳中学 2024 级高二数学周测（4）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_3__新_caf9ca99_ocr\\02_深圳中学2024级高二周测_4.md",
+  "solution_file": "",
+  "question_number": 14,
+  "question_type": "fill_blank",
+  "stem_markdown": "### 14. 已知函数 $f(x)=x^{3}+x-\\sin x$ ，则关于 t 的不等式 $f(t^{2}-t)+f(-t)<f(0)$ 的解集为 \\_\\_\\_\\_.",
+  "stem_html": "<h3>14. 已知函数 $f(x)=x^{3}+x-\\sin x$ ，则关于 t 的不等式 $f(t^{2}-t)+f(-t)&lt;f(0)$ 的解集为 ____.</h3>",
+  "options": {},
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-10T11:54:25.403159+00:00",
+    "question_source_sha256": "3b66a6712b18cf29a48505581ccb4101bdac1d317dc48ad708df186a813b1f4f",
+    "solution_source_sha256": ""
+  }
+}

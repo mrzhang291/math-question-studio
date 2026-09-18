@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_0da7232a75c2_q010",
+  "display_id": "EXAM-0DA7232A75C2-Q010",
+  "source_exam": "深圳中学 2024 级高二数学周测（3）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_3_eb00bedd_ocr\\01_深圳中学2024级高二周测_3.md",
+  "solution_file": "",
+  "question_number": 10,
+  "question_type": "multiple_choice",
+  "stem_markdown": "### 10. 已知函数 $f(x) = 2^x$ ， $g(x) = x^2 + ax$ （其中 $a \\in R$ ）。对于不相等的实数 $x_1, x_2$ ，设 $m = \\frac{f(x_1) - f(x_2)}{x_1 - x_2}$ ， $n = \\frac{g(x_1) - g(x_2)}{x_1 - x_2}$ ，则\n\nA. 对于任意不相等的实数 $x_1, x_2$ ，都有 $m > 0$\n\nB. 对于任意的 $a$ 及任意不相等的实数 $x_1, x_2$ ，都有 $n > 0$\n\nC. 对于任意的 $a$ ，存在不相等的实数 $x_1, x_2$ ，使得 $m = n$\n\nD. 对于任意的 $a$ ，存在不相等的实数 $x_1, x_2$ ，使得 $m = -n$",
+  "stem_html": "<h3>10. 已知函数 $f(x) = 2^x$ ， $g(x) = x^2 + ax$ （其中 $a \\in R$ ）。对于不相等的实数 $x_1, x_2$ ，设 $m = \\frac{f(x_1) - f(x_2)}{x_1 - x_2}$ ， $n = \\frac{g(x_1) - g(x_2)}{x_1 - x_2}$ ，则</h3>\n<p>A. 对于任意不相等的实数 $x_1, x_2$ ，都有 $m &gt; 0$</p>\n<p>B. 对于任意的 $a$ 及任意不相等的实数 $x_1, x_2$ ，都有 $n &gt; 0$</p>\n<p>C. 对于任意的 $a$ ，存在不相等的实数 $x_1, x_2$ ，使得 $m = n$</p>\n<p>D. 对于任意的 $a$ ，存在不相等的实数 $x_1, x_2$ ，使得 $m = -n$</p>",
+  "options": {
+    "A": "对于任意不相等的实数 $x_1, x_2$ ，都有 $m > 0$",
+    "B": "对于任意的 $a$ 及任意不相等的实数 $x_1, x_2$ ，都有 $n > 0$",
+    "C": "对于任意的 $a$ ，存在不相等的实数 $x_1, x_2$ ，使得 $m = n$",
+    "D": "对于任意的 $a$ ，存在不相等的实数 $x_1, x_2$ ，使得 $m = -n$"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 6,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T01:40:53.471067+00:00",
+    "question_source_sha256": "60f0111d8ba0c195d5ce744a7b4bc0115a2b75ea53f1c5521370cc5f7c8eff4c",
+    "solution_source_sha256": ""
+  }
+}

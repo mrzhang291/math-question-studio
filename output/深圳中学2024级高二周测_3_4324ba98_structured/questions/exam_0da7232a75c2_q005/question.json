@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_0da7232a75c2_q005",
+  "display_id": "EXAM-0DA7232A75C2-Q005",
+  "source_exam": "深圳中学 2024 级高二数学周测（3）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_3_4324ba98_ocr\\01_深圳中学2024级高二周测_3.md",
+  "solution_file": "",
+  "question_number": 5,
+  "question_type": "single_choice",
+  "stem_markdown": "### 5. 设函数 $f'(x)$ 是奇函数 $f(x) (x \\in \\mathbf{R})$ 的导函数， $f(-1) = 0$ ，当 $x > 0$ 时， $xf'(x) - f(x) < 0$ ，则使得 $f(x) > 0$ 成立的 $x$ 的取值范围是\n\nA. $(-\\infty, -1)\\mathrm{U}(0,1)$\n\nB. $(-1,0)\\mathrm{U}(1,+\\infty)$\n\nC. $(-\\infty,-1)\\mathrm{U}(-1,0)$\n\nD. $(0,1)\\mathrm{U}(1,+\\infty)$",
+  "stem_html": "<h3>5. 设函数 $f'(x)$ 是奇函数 $f(x) (x \\in \\mathbf{R})$ 的导函数， $f(-1) = 0$ ，当 $x &gt; 0$ 时， $xf'(x) - f(x) &lt; 0$ ，则使得 $f(x) &gt; 0$ 成立的 $x$ 的取值范围是</h3>\n<p>A. $(-\\infty, -1)\\mathrm{U}(0,1)$</p>\n<p>B. $(-1,0)\\mathrm{U}(1,+\\infty)$</p>\n<p>C. $(-\\infty,-1)\\mathrm{U}(-1,0)$</p>\n<p>D. $(0,1)\\mathrm{U}(1,+\\infty)$</p>",
+  "options": {
+    "A": "$(-\\infty, -1)\\mathrm{U}(0,1)$",
+    "B": "$(-1,0)\\mathrm{U}(1,+\\infty)$",
+    "C": "$(-\\infty,-1)\\mathrm{U}(-1,0)$",
+    "D": "$(0,1)\\mathrm{U}(1,+\\infty)$"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T09:22:49.083557+00:00",
+    "question_source_sha256": "60f0111d8ba0c195d5ce744a7b4bc0115a2b75ea53f1c5521370cc5f7c8eff4c",
+    "solution_source_sha256": ""
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_d0f98e715d39_q008",
+  "display_id": "EXAM-D0F98E715D39-Q008",
+  "source_exam": "深圳中学 2024 级高二数学周测（2）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_1_d529e987_ocr\\02_深圳中学2024级高二周测_2.md",
+  "solution_file": "",
+  "question_number": 8,
+  "question_type": "single_choice",
+  "stem_markdown": "### 8. 已知定义在 $R$ 上的函数 $f(x)$ 的导数为 $f'(x), f(1) = \\mathrm{e}$ , 且对任意的 $x$ 满足 $f'(x) - f(x) < \\mathrm{e}^x$ , 则不等式 $f(x) > x \\mathrm{e}^x$ 的解集是（）\n\nA. $(- \\infty, 1)$\n\nB. $(- \\infty, 0)$\n\nC. $(0, +\\infty)$\n\nD. $(1, +\\infty)$\n\n#",
+  "stem_html": "<h3>8. 已知定义在 $R$ 上的函数 $f(x)$ 的导数为 $f'(x), f(1) = \\mathrm{e}$ , 且对任意的 $x$ 满足 $f'(x) - f(x) &lt; \\mathrm{e}^x$ , 则不等式 $f(x) &gt; x \\mathrm{e}^x$ 的解集是（）</h3>\n<p>A. $(- \\infty, 1)$</p>\n<p>B. $(- \\infty, 0)$</p>\n<p>C. $(0, +\\infty)$</p>\n<p>D. $(1, +\\infty)$</p>\n<h1></h1>",
+  "options": {
+    "A": "$(- \\infty, 1)$",
+    "B": "$(- \\infty, 0)$",
+    "C": "$(0, +\\infty)$",
+    "D": "$(1, +\\infty)$\n\n#"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T09:06:33.920105+00:00",
+    "question_source_sha256": "7cb6872dd8f9092683f4d213bfc976e0e2eecfc7cc5919b7f6cfa19ef958a3d1",
+    "solution_source_sha256": ""
+  }
+}

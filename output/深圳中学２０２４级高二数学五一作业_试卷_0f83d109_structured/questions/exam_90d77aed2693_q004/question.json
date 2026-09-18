@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_90d77aed2693_q004",
+  "display_id": "EXAM-90D77AED2693-Q004",
+  "source_exam": "深圳中学 2024 级高二数学 五一作业",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学２０２４级高二数学五一作业_试卷_0f83d109_ocr\\01_深圳中学２０２４级高二数学五一作业_试卷.md",
+  "solution_file": "",
+  "question_number": 4,
+  "question_type": "single_choice",
+  "stem_markdown": "### 4. 已知随机变量 $X$ 的分布列为\n\n<table><tr><td>X</td><td>-1</td><td>0</td><td>1</td><td>2</td><td>3</td></tr><tr><td>P</td><td>0.3</td><td>a</td><td>0.3</td><td>0.2</td><td>0.1</td></tr></table>\n\n设函数 $f(x) = P(X < x)$ ，若 $x \\in [0,2]$ ，则函数 $f(x)$ 的值域为（）\n\nA. $\\{0.2, 0.3, 0.4\\}$\n\nB. $\\{0.3, 0.5, 0.7\\}$\n\nC. $\\{0.3, 0.4, 0.7\\}$\n\nD. $\\{0.4, 0.7, 0.9\\}$",
+  "stem_html": "<h3>4. 已知随机变量 $X$ 的分布列为</h3>\n<table><tr><td>X</td><td>-1</td><td>0</td><td>1</td><td>2</td><td>3</td></tr><tr><td>P</td><td>0.3</td><td>a</td><td>0.3</td><td>0.2</td><td>0.1</td></tr></table>\n\n<p>设函数 $f(x) = P(X &lt; x)$ ，若 $x \\in [0,2]$ ，则函数 $f(x)$ 的值域为（）</p>\n<p>A. $\\{0.2, 0.3, 0.4\\}$</p>\n<p>B. $\\{0.3, 0.5, 0.7\\}$</p>\n<p>C. $\\{0.3, 0.4, 0.7\\}$</p>\n<p>D. $\\{0.4, 0.7, 0.9\\}$</p>",
+  "options": {
+    "A": "$\\{0.2, 0.3, 0.4\\}$",
+    "B": "$\\{0.3, 0.5, 0.7\\}$",
+    "C": "$\\{0.3, 0.4, 0.7\\}$",
+    "D": "$\\{0.4, 0.7, 0.9\\}$"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": null,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-13T10:54:41.976946+00:00",
+    "question_source_sha256": "15514af6ceb54dc08cbfc8100c7df26b356cb6688fdd3bfe5c4f436c61261dd5",
+    "solution_source_sha256": ""
+  }
+}

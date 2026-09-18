@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -23,7 +24,7 @@ from apply_teacher_review import apply_decisions, validate_decisions
 from audit_tags import _audit_question
 from build_review_workbench import build_workbench, tag_signature
 from generate_student_performance import generate_performance
-from review_server import WorkbenchHandler
+from review_server import WorkbenchHandler, _deduplicate_uploads
 
 
 APPLY_SCRIPT = SCRIPTS / "apply_teacher_review.py"
@@ -96,8 +97,16 @@ class TeacherReviewLoopTests(unittest.TestCase):
 
             self.assertEqual(result["review_queue"], 1)
             self.assertEqual(result["priority_counts"]["high"], 1)
+            self.assertEqual(result["bank_overview"]["bank_question_count"], 1)
+            self.assertEqual(result["bank_overview"]["safe_pool_count"], 0)
+            self.assertEqual(result["bank_overview"]["excluded_count"], 1)
+            self.assertIn("unreliable_tag", result["bank_overview"]["excluded_reasons"])
             self.assertIn("DEMO-Q001", page)
+            self.assertIn('id="metric-safe"', page)
+            self.assertIn('id="metric-excluded-reasons"', page)
             self.assertIn("teacher-review-v1", page)
+            self.assertIn('src="./mathjax/tex-mml-chtml.js"', page)
+            self.assertTrue((bank / "review" / "mathjax" / "tex-mml-chtml.js").is_file())
             self.assertNotIn(">智能组卷<", page)
             self.assertIn('"class_paper"', page)
             self.assertIn("组卷要求", page)
@@ -127,6 +136,9 @@ class TeacherReviewLoopTests(unittest.TestCase):
             self.assertIn("removedLegacyDifficulty", page)
             self.assertIn("personal-generation-config-v2", page)
             self.assertIn('id="tag-review-entry"', root)
+            self.assertIn("上传试卷并建立题库", page)
+            self.assertIn("/api/ocr/import", page)
+            self.assertIn("Cherry Studio exam-ocr Skill / MinerU", page)
             self.assertIn('href="http://127.0.0.1:8765/review/index.html"', root)
             self.assertIn("打开实时工作台", page)
             self.assertIn("static-mode", page)
@@ -134,7 +146,7 @@ class TeacherReviewLoopTests(unittest.TestCase):
             self.assertIn("toolbar-more", page)
             self.assertIn("cleanAnswerContent", page)
             self.assertIn("formatMathNarrative", page)
-            self.assertIn("timeoutMs=85000", page)
+            self.assertIn("timeoutMs=190000", page)
             self.assertIn("errorCode='client_stage_timeout'", page)
             self.assertIn("服务端 JSON 不完整", page)
             self.assertIn("rec-generation-pipeline", page)
@@ -181,8 +193,8 @@ class TeacherReviewLoopTests(unittest.TestCase):
             self.assertIn("previousCompatible", page)
             self.assertIn("recoveryBatchId", page)
             self.assertIn("recoveryRound<=2", page)
-            self.assertIn("attemptStart=1,attemptEnd=5", page)
-            self.assertIn("runSlots(rows.map((_,index)=>index),batchId,1,3)", page)
+            self.assertIn("attemptStart=1,attemptEnd=12", page)
+            self.assertIn("runSlots(rows.map((_,index)=>index),batchId,1,12)", page)
             self.assertIn(
                 "runSlots(failedIndices,recoveryBatchId,3+recoveryRound,3+recoveryRound)",
                 page,
@@ -219,7 +231,7 @@ class TeacherReviewLoopTests(unittest.TestCase):
             self.assertIn("liveGenerationController", page)
             self.assertIn("稳定补位", page)
             self.assertIn("每题总计最多", page)
-            self.assertIn("batchDeadlineMs=Math.min(180000,90000+rows.length*20000)", page)
+            self.assertIn("batchDeadlineMs=900000", page)
             self.assertIn("cancelAllGenerationBatches(cancellableLiveBatchIds())", page)
             self.assertIn("liveBatchState.pending", page)
             self.assertIn("待补位", page)
@@ -249,16 +261,28 @@ class TeacherReviewLoopTests(unittest.TestCase):
                 formatter_line = next(
                     line.strip() for line in page.splitlines() if "function formatMathNarrative(value)" in line
                 )
+                answer_decoder_line = next(
+                    line.strip() for line in page.splitlines() if "function decodeNumericHtmlEntities(value)" in line
+                )
+                answer_cleaner_line = next(
+                    line.strip() for line in page.splitlines() if "function cleanAnswerContent(value)" in line
+                )
                 formatter_test = bank / "math-narrative-test.js"
                 formatter_test.write_text(
                     formatter_line
+                    + "\n"
+                    + answer_decoder_line
+                    + "\n"
+                    + answer_cleaner_line
                     + "\nconst raw=\"计算得 h(x) =[(x-1)(x^2+x+1)]/3 - ln x = (x^3-1)/3 - ln x，求导得 h'(x) = x^2 - 1/x = (x^3-1)/x，h(1)=0。当 0<x<1 时 h'(x)<0，x>1 时 h'(x)>0，故 x=1 为极小值点且 h(1)=0，即 h(x)≥0。已有 $f(x)=x^2$。\";"
                     + "\nconst result=formatMathNarrative(raw);"
                     + "\nif(!result.includes(\"$h(x) =[(x-1)(x^2+x+1)]/3 - \\\\ln x = (x^3-1)/3 - \\\\ln x$\"))process.exit(2);"
                     + "\nif(!result.includes(\"$h'(x) = x^2 - 1/x = (x^3-1)/x$\"))process.exit(3);"
                     + "\nif(!result.includes(\"$0<x<1$\")||!result.includes(\"$h'(x)<0$\")||!result.includes(\"$x>1$\")||!result.includes(\"$h(x)≥0$\"))process.exit(4);"
                     + "\nif(!result.includes(\"$f(x)=x^2$\"))process.exit(5);"
-                    + "\nif(result.includes(\"$h(x)$ =\"))process.exit(6);",
+                    + "\nif(result.includes(\"$h(x)$ =\"))process.exit(6);"
+                    + "\nif(!formatMathNarrative(\"函数的值为____。\").includes(\"$\\\\underline{\\\\hspace{2em}}$\"))process.exit(7);"
+                    + "\nif(cleanAnswerContent(\"&#x44;\")!==\"D\")process.exit(8);",
                     encoding="utf-8",
                 )
                 subprocess.run(["node", str(formatter_test)], check=True, capture_output=True, text=True)
@@ -439,6 +463,69 @@ class TeacherReviewLoopTests(unittest.TestCase):
                 server.shutdown()
                 server.server_close()
                 thread.join(timeout=2)
+
+    def test_local_server_accepts_exam_upload_for_cherry_ocr_skill(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            bank = Path(directory)
+            (bank / "review").mkdir()
+            (bank / "review" / "index.html").write_text("<html>fresh</html>", encoding="utf-8")
+            boundary = "----teacher-workbench-test"
+            body = (
+                f"--{boundary}\r\n"
+                'Content-Disposition: form-data; name="files"; filename="试卷.pdf"\r\n'
+                "Content-Type: application/pdf\r\n\r\n"
+            ).encode("utf-8") + b"%PDF-test\r\n" + f"--{boundary}--\r\n".encode("ascii")
+            captured: list[tuple[object, ...]] = []
+            captured_event = threading.Event()
+
+            def fake_run_ocr_job(*args):
+                captured.append(args)
+                captured_event.set()
+
+            def handler(*args, **kwargs):
+                return WorkbenchHandler(*args, bank=bank, **kwargs)
+
+            server = ThreadingHTTPServer(("127.0.0.1", 0), handler)
+            thread = threading.Thread(target=server.serve_forever, daemon=True)
+            thread.start()
+            with tempfile.TemporaryDirectory() as project_directory:
+                try:
+                    with (
+                        patch.dict(os.environ, {"MINERU_TOKEN": "test-token"}),
+                        patch("review_server.PROJECT_ROOT", Path(project_directory)),
+                        patch("review_server._find_cherry_ocr_script", return_value=Path(__file__)),
+                        patch("review_server._run_ocr_job", side_effect=fake_run_ocr_job),
+                    ):
+                        request = urllib.request.Request(
+                            f"http://127.0.0.1:{server.server_port}/api/ocr/import",
+                            data=body,
+                            headers={
+                                "Content-Type": f"multipart/form-data; boundary={boundary}",
+                                "Content-Length": str(len(body)),
+                            },
+                            method="POST",
+                        )
+                        with urllib.request.urlopen(request) as response:
+                            payload = json.loads(response.read().decode("utf-8"))
+                    self.assertEqual(response.status, 202)
+                    self.assertEqual(payload["status"], "queued")
+                    self.assertTrue(captured_event.wait(1))
+                    self.assertEqual(len(captured), 1)
+                    self.assertEqual(captured[0][2], Path(__file__).resolve())
+                    self.assertEqual(captured[0][1][0].suffix, ".pdf")
+                finally:
+                    server.shutdown()
+                    server.server_close()
+                    thread.join(timeout=2)
+
+    def test_upload_deduplication_prefers_pdf_for_same_named_word_file(self) -> None:
+        files = [
+            ("试卷.docx", b"word-exam"),
+            ("试卷.pdf", b"pdf-exam"),
+            ("答案.docx", b"word-answer"),
+            ("答案.pdf", b"pdf-answer"),
+        ]
+        self.assertEqual(_deduplicate_uploads(files), [("试卷.pdf", b"pdf-exam"), ("答案.pdf", b"pdf-answer")])
 
     def test_local_server_exposes_live_personalized_generation_bridge(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

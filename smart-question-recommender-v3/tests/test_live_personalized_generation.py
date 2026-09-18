@@ -19,6 +19,7 @@ from live_personalized_generation import (
     SAFETY_FAMILY_COUNTS,
     SAFE_BLUEPRINT_VERIFICATION_POLICY_VERSION,
     GatewayConfig,
+    GatewayRequestError,
     GenerationCancelledError,
     LiveGenerationError,
     _answers_match,
@@ -42,6 +43,7 @@ from live_personalized_generation import (
     _math_structure,
     _monotonicity_blueprint,
     _number_agnostic_structure,
+    _pedagogical_fingerprint_key,
     _parse_json_content,
     _validate_request,
     _probability_branch_arithmetic_error,
@@ -743,6 +745,70 @@ class LivePersonalizedGenerationTests(unittest.TestCase):
         self.assertEqual(result["question"]["verification"]["status"], "passed")
         self.assertEqual(result["question"]["verification"]["consensus_checks"], 2)
 
+    def test_reused_safe_blueprint_falls_back_to_its_proven_solution(self) -> None:
+        request = {
+            **self.request(3),
+            "knowledge": "导数与微分·求导运算·基本函数求导",
+            "question_type": "single_choice",
+            "batch_id": "blueprint-local-fallback",
+            "slot_index": 0,
+        }
+        draft = _safety_blueprint(
+            {**request, "_family_override": 0},
+            "single_choice",
+        )
+        assert draft is not None
+        draft["_safety_blueprint_family"] = draft["family_id"]
+        draft["_safety_blueprint_reuse"] = True
+        failed = {"status": "failed", "answer": "", "solution_markdown": "", "notes": "未完成独立计算"}
+        slot = {
+            "question_type": "single_choice",
+            "primary_knowledge": request["knowledge"],
+            "reference_questions": self.references,
+        }
+        with patch("live_personalized_generation._slot_and_references", return_value=(slot, self.references[:3])):
+            with patch("live_personalized_generation._gateway_chat_json", return_value=failed) as gateway:
+                result = verify_personalized_draft(self.bank, {**request, "draft": draft})
+        self.assertEqual(gateway.call_count, 3)
+        self.assertTrue(result["question"]["generation"]["safety_blueprint_reuse"])
+        self.assertTrue(result["question"]["verification"]["deterministic_blueprint_fallback"])
+        self.assertIn("已证明安全模板", result["question"]["verification"]["notes"])
+
+    def test_exhausted_safe_families_reuse_a_proven_blueprint(self) -> None:
+        knowledge = "导数与微分·求导运算·基本函数求导"
+        request = {
+            **self.request(3),
+            "mode": "knowledge",
+            "knowledge": knowledge,
+            "question_type": "single_choice",
+            "batch_id": "batch-reuse-exhausted-families",
+            "slot_index": 0,
+            "batch_size": 3,
+            "diversity_round": 1,
+        }
+        history_rows = [
+            {
+                "delivery_status": "committed",
+                "student_id": "S001",
+                "knowledge": knowledge,
+                "question": {
+                    "question_type": "single_choice",
+                    "primary_knowledge": knowledge,
+                    "generation": {"safety_blueprint_family": f"derivative-{family}"},
+                },
+            }
+            for family in range(SAFETY_FAMILY_COUNTS["derivative"])
+        ]
+        (self.bank / "generation" / "live_personalized_generation_history.jsonl").write_text(
+            "\n".join(json.dumps(row, ensure_ascii=False) for row in history_rows) + "\n",
+            encoding="utf-8",
+        )
+        selected = _select_safety_blueprint(self.bank, request, "single_choice")
+        self.assertIsNotNone(selected)
+        assert selected is not None
+        self.assertTrue(selected["_safety_blueprint_reuse"])
+        self.assertTrue(selected["family_id"].startswith("derivative-"))
+
     def test_choice_verification_rejects_answer_solution_contradiction(self) -> None:
         self.assertEqual(_choice_answer_labels("答案：A、C、D"), ("A", "C", "D"))
         error = _verification_consistency_error(
@@ -1159,7 +1225,7 @@ class LivePersonalizedGenerationTests(unittest.TestCase):
         self.assertEqual(result["blueprint_family"], "monotonicity-1")
         _release_batch_draft(request["batch_id"], request["slot_index"])
 
-    def test_all_exact_families_used_falls_back_to_model_drafting(self) -> None:
+    def test_all_exact_families_used_reuses_a_proven_blueprint(self) -> None:
         knowledge = "导数应用·单调性·判断单调区间"
         history_rows = [
             {
@@ -1189,19 +1255,13 @@ class LivePersonalizedGenerationTests(unittest.TestCase):
             "primary_knowledge": knowledge,
             "reference_questions": self.references,
         }
-        model_draft = {
-            "question_type": "fill_blank",
-            "stem_markdown": "Let $f(x)=xe^{-x}$. Find an increasing interval: ________.",
-            "options": {},
-            "answer": "(-\\infty,1]",
-            "solution_markdown": "Use the derivative sign.",
-            "changed_dimensions": ["representation", "reasoning_path"],
-        }
         with patch("live_personalized_generation._slot_and_references", return_value=(slot, self.references[:3])):
-            with patch("live_personalized_generation._gateway_chat_json", return_value=model_draft) as gateway:
+            with patch("live_personalized_generation._gateway_chat_json") as gateway:
                 result = generate_personalized_draft(self.bank, request)
-        gateway.assert_called_once()
-        self.assertEqual(result["draft_source"], "cherry_studio_model")
+        gateway.assert_not_called()
+        self.assertEqual(result["draft_source"], "skill_safety_blueprint")
+        self.assertTrue(result["draft"]["_safety_blueprint_reuse"])
+        self.assertTrue(result["blueprint_family"].startswith("monotonicity-"))
         _release_batch_draft(request["batch_id"], request["slot_index"])
 
     def test_number_only_change_has_same_structure_and_is_rejected(self) -> None:
@@ -1241,6 +1301,73 @@ class LivePersonalizedGenerationTests(unittest.TestCase):
         }
         errors = _history_similarity_errors(self.bank, current)
         self.assertTrue(any("仅替换数字" in error for error in errors))
+
+    def test_distinct_safety_families_are_not_rejected_by_coarse_fingerprint(self) -> None:
+        knowledge = "导数应用·不等式证明·构造函数证明"
+        fingerprint = {
+            "knowledge": knowledge,
+            "question_type": "single_choice",
+            "target_level": 3,
+            "method_family": "构造函数",
+            "task_intent": "判断",
+            "reasoning_pattern": "单步判断",
+            "option_pattern": "四选一",
+        }
+        previous = {
+            "stem_markdown": "设 $f(x)=x^2+1$，判断其在 $x=0$ 处的函数值。",
+            "options": {"A": "1", "B": "0", "C": "2", "D": "无法确定"},
+            "answer": "A",
+            "solution_markdown": "代入 $x=0$ 可得 $f(0)=1$。",
+            "question_type": "single_choice",
+            "family_id": "inequality-0",
+        }
+        current = {
+            "stem_markdown": "设 $g(x)=\\ln x$（$x>0$），判断其在 $x=1$ 处的函数值。",
+            "options": {"A": "0", "B": "1", "C": "-1", "D": "无法确定"},
+            "answer": "A",
+            "solution_markdown": "代入 $x=1$ 可得 $g(1)=0$。",
+            "question_type": "single_choice",
+            "family_id": "inequality-1",
+        }
+        history = {
+            "delivery_status": "committed",
+            "student_id": "S001",
+            "knowledge": knowledge,
+            "question": {
+                "question_id": "previous-family-a",
+                "student_id": "S001",
+                "primary_knowledge": knowledge,
+                "question_type": "single_choice",
+                **previous,
+                "generation": {
+                    "safety_blueprint_family": previous["family_id"],
+                    "pedagogical_fingerprint": fingerprint,
+                },
+            },
+        }
+        (self.bank / "generation" / "live_personalized_generation_history.jsonl").write_text(
+            json.dumps(history, ensure_ascii=False) + "\n", encoding="utf-8"
+        )
+        question = {
+            "question_id": "current-family-b",
+            "student_id": "S001",
+            "primary_knowledge": knowledge,
+            "question_type": "single_choice",
+            **current,
+            "generation": {
+                "safety_blueprint_family": current["family_id"],
+                "pedagogical_fingerprint": fingerprint,
+            },
+        }
+        self.assertNotEqual(
+            _number_agnostic_structure(previous["stem_markdown"]),
+            _number_agnostic_structure(current["stem_markdown"]),
+        )
+        self.assertEqual(
+            _pedagogical_fingerprint_key(question["generation"]["pedagogical_fingerprint"]),
+            _pedagogical_fingerprint_key(history["question"]["generation"]["pedagogical_fingerprint"]),
+        )
+        self.assertEqual(_history_similarity_errors(self.bank, question), [])
 
     def test_inequality_blueprints_are_fast_exact_single_choice_questions(self) -> None:
         request = {
@@ -1838,6 +1965,26 @@ class LivePersonalizedGenerationTests(unittest.TestCase):
                 generate_personalized_draft(
                     self.bank,
                     {**request, "batch_id": "new-batch-after-rejection", "slot_index": 1},
+                )
+
+    def test_gateway_failure_during_verification_persists_rejection(self) -> None:
+        request = {**self.request(3), "batch_id": "gateway-rejection-test", "slot_index": 0}
+        draft = self.draft("网关不可用时不得复用的题干。\nA. 1\nB. 2\nC. 3\nD. 4")
+        with patch(
+            "live_personalized_generation._gateway_chat_json",
+            side_effect=GatewayRequestError("Cherry Studio 网关返回 HTTP 500"),
+        ):
+            with self.assertRaisesRegex(GatewayRequestError, "HTTP 500"):
+                verify_personalized_draft(self.bank, {**request, "draft": draft})
+        rejection_path = self.bank / "generation" / "live_personalized_generation_rejections.jsonl"
+        rejection = rejection_path.read_text(encoding="utf-8")
+        self.assertIn("网关不可用时不得复用", rejection)
+        self.assertIn("独立审题服务不可用，题目未进入待审核", rejection)
+        with patch("live_personalized_generation._gateway_chat_json", return_value=draft):
+            with self.assertRaisesRegex(LiveGenerationError, "此前已经生成失败"):
+                generate_personalized_draft(
+                    self.bank,
+                    {**request, "batch_id": "new-batch-after-gateway", "slot_index": 1},
                 )
 
     def test_incomplete_model_draft_is_completed_before_display(self) -> None:

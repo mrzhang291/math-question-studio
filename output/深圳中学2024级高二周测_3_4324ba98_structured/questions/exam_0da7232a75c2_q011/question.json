@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_0da7232a75c2_q011",
+  "display_id": "EXAM-0DA7232A75C2-Q011",
+  "source_exam": "深圳中学 2024 级高二数学周测（3）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_3_4324ba98_ocr\\01_深圳中学2024级高二周测_3.md",
+  "solution_file": "",
+  "question_number": 11,
+  "question_type": "multiple_choice",
+  "stem_markdown": "### 11. 设函数 $f(x) = 2x^{3} - 3ax^{2} + 1$ ，则\n\nA. 当 $a > 1$ 时， $f(x)$ 有三个零点\nB. 当 $a < 0$ 时， $x = 0$ 是 $f(x)$ 的极大值点\nC. 存在 $a, b$ ，使得 $x = b$ 为曲线 $y = f(x)$ 的对称轴\nD. 存在 $a$ ，使得点 $(1, f(1))$ 为曲线 $y = f(x)$ 的对称中心\n\n#",
+  "stem_html": "<h3>11. 设函数 $f(x) = 2x^{3} - 3ax^{2} + 1$ ，则</h3>\n<p>A. 当 $a &gt; 1$ 时， $f(x)$ 有三个零点\nB. 当 $a &lt; 0$ 时， $x = 0$ 是 $f(x)$ 的极大值点\nC. 存在 $a, b$ ，使得 $x = b$ 为曲线 $y = f(x)$ 的对称轴\nD. 存在 $a$ ，使得点 $(1, f(1))$ 为曲线 $y = f(x)$ 的对称中心</p>\n<h1></h1>",
+  "options": {
+    "A": "当 $a > 1$ 时， $f(x)$ 有三个零点",
+    "B": "当 $a < 0$ 时， $x = 0$ 是 $f(x)$ 的极大值点",
+    "C": "存在 $a, b$ ，使得 $x = b$ 为曲线 $y = f(x)$ 的对称轴",
+    "D": "存在 $a$ ，使得点 $(1, f(1))$ 为曲线 $y = f(x)$ 的对称中心\n\n#"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 6,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T09:22:49.100626+00:00",
+    "question_source_sha256": "60f0111d8ba0c195d5ce744a7b4bc0115a2b75ea53f1c5521370cc5f7c8eff4c",
+    "solution_source_sha256": ""
+  }
+}

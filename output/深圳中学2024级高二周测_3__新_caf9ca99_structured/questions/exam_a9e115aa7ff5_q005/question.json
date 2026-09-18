@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_a9e115aa7ff5_q005",
+  "display_id": "EXAM-A9E115AA7FF5-Q005",
+  "source_exam": "深圳中学 2024 级高二数学周测（4）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_3__新_caf9ca99_ocr\\02_深圳中学2024级高二周测_4.md",
+  "solution_file": "",
+  "question_number": 5,
+  "question_type": "single_choice",
+  "stem_markdown": "### 5. 若 $f(x)$ 是定义在区间 $(-3,2)$ 上的函数，其图象如图所示，设 $f(x)$ 的导函数为 $f'(x)$ ，则 $\\frac{f'(x)}{f(x)}>0$ 的解集为（）\n\nA. $(-2,-1)\\cup(1,2)$\n\nB. $(-1,0)\\cup(1,2)$\n\nC. $(-2,-1)\\cup(0,1)$\n\nD. $(-3,-2)\\cup(0,1)$\n\n![](assets/5af50655623cb22914ed7b86eb1eff37723629d0fd5b8878776bf19e74daf987.jpg)",
+  "stem_html": "<h3>5. 若 $f(x)$ 是定义在区间 $(-3,2)$ 上的函数，其图象如图所示，设 $f(x)$ 的导函数为 $f'(x)$ ，则 $\\frac{f'(x)}{f(x)}&gt;0$ 的解集为（）</h3>\n<p>A. $(-2,-1)\\cup(1,2)$</p>\n<p>B. $(-1,0)\\cup(1,2)$</p>\n<p>C. $(-2,-1)\\cup(0,1)$</p>\n<p>D. $(-3,-2)\\cup(0,1)$</p>\n<p><img alt=\"\" src=\"assets/5af50655623cb22914ed7b86eb1eff37723629d0fd5b8878776bf19e74daf987.jpg\" /></p>",
+  "options": {
+    "A": "$(-2,-1)\\cup(1,2)$",
+    "B": "$(-1,0)\\cup(1,2)$",
+    "C": "$(-2,-1)\\cup(0,1)$",
+    "D": "$(-3,-2)\\cup(0,1)$\n\n![](assets/5af50655623cb22914ed7b86eb1eff37723629d0fd5b8878776bf19e74daf987.jpg)"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [
+    {
+      "original_ref": "images/5af50655623cb22914ed7b86eb1eff37723629d0fd5b8878776bf19e74daf987.jpg",
+      "alt": "",
+      "saved": true,
+      "file_name": "5af50655623cb22914ed7b86eb1eff37723629d0fd5b8878776bf19e74daf987.jpg",
+      "relative_path": "assets/5af50655623cb22914ed7b86eb1eff37723629d0fd5b8878776bf19e74daf987.jpg",
+      "sha256": "39a15d2cdac5fbe643d770a3e77bc8ecbb08db85e2317062e746b48be94235af"
+    }
+  ],
+  "quality_flags": [
+    "contains_images",
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-10T11:54:25.382679+00:00",
+    "question_source_sha256": "3b66a6712b18cf29a48505581ccb4101bdac1d317dc48ad708df186a813b1f4f",
+    "solution_source_sha256": ""
+  }
+}

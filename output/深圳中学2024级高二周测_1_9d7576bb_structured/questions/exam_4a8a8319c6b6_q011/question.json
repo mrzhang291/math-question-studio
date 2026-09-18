@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_4a8a8319c6b6_q011",
+  "display_id": "EXAM-4A8A8319C6B6-Q011",
+  "source_exam": "深圳中学 2024 级高二数学周测（1）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_1_9d7576bb_ocr\\01_深圳中学2024级高二周测_1.md",
+  "solution_file": "",
+  "question_number": 11,
+  "question_type": "multiple_choice",
+  "stem_markdown": "### 11. 已知定义在 $\\mathbf{R}$ 上的函数 $f(x), g(x)$ 的导函数分别为 $f'(x), g'(x)$ ，且 $f(x) = f(4 - x)$ ， $f(1 + x) - g(x) = 4, f'(x) + g'(1 + x) = 0$ ，则（）\n\nA. $g(x)$ 关于直线 $x = 1$ 对称\n\nB. $g'(3) = 1$\n\nC. $f'(x)$ 的周期为4\n\nD. $f'(n) \\cdot g'(n) = 0 (n \\in Z)$\n\n#",
+  "stem_html": "<h3>11. 已知定义在 $\\mathbf{R}$ 上的函数 $f(x), g(x)$ 的导函数分别为 $f'(x), g'(x)$ ，且 $f(x) = f(4 - x)$ ， $f(1 + x) - g(x) = 4, f'(x) + g'(1 + x) = 0$ ，则（）</h3>\n<p>A. $g(x)$ 关于直线 $x = 1$ 对称</p>\n<p>B. $g'(3) = 1$</p>\n<p>C. $f'(x)$ 的周期为4</p>\n<p>D. $f'(n) \\cdot g'(n) = 0 (n \\in Z)$</p>\n<h1></h1>",
+  "options": {
+    "A": "$g(x)$ 关于直线 $x = 1$ 对称",
+    "B": "$g'(3) = 1$",
+    "C": "$f'(x)$ 的周期为4",
+    "D": "$f'(n) \\cdot g'(n) = 0 (n \\in Z)$\n\n#"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 6,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-10T08:17:50.214132+00:00",
+    "question_source_sha256": "792c0598f613c48e1cb160411bfdb4297a79c74daab446701006a1d3f8f24f16",
+    "solution_source_sha256": ""
+  }
+}

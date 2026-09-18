@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_af2fc466c95f_q014",
+  "display_id": "EXAM-AF2FC466C95F-Q014",
+  "source_exam": "深圳中学 2024 级高二数学周测（3）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_3__新_caf9ca99_ocr\\01_深圳中学2024级高二周测_3__新.md",
+  "solution_file": "",
+  "question_number": 14,
+  "question_type": "fill_blank",
+  "stem_markdown": "### 14. 设函数 $f(x) = e^{x}(2x - 1) - ax + a$ ，其中 $a < 1$ ，若存在唯一的整数 $x_{0}$ ，使得 $f(x_{0}) < 0$ ，则 $a$ 的取值范围是 \\_\\_\\_\\_.",
+  "stem_html": "<h3>14. 设函数 $f(x) = e^{x}(2x - 1) - ax + a$ ，其中 $a &lt; 1$ ，若存在唯一的整数 $x_{0}$ ，使得 $f(x_{0}) &lt; 0$ ，则 $a$ 的取值范围是 ____.</h3>",
+  "options": {},
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-10T11:54:25.354770+00:00",
+    "question_source_sha256": "78a4bb6656c35dbe613a79b0ed7dccc993b5c108f4f5c32b995a022aaa492633",
+    "solution_source_sha256": ""
+  }
+}

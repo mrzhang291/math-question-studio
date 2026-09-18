@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_d0f98e715d39_q012",
+  "display_id": "EXAM-D0F98E715D39-Q012",
+  "source_exam": "深圳中学 2024 级高二数学周测（2）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_1_9d7576bb_ocr\\02_深圳中学2024级高二周测_2.md",
+  "solution_file": "",
+  "question_number": 12,
+  "question_type": "fill_blank",
+  "stem_markdown": "### 12. 已知函数 $f(x) = \\ln x + x^2 + ax$ 的单调递减区间为 $\\left(\\frac{1}{2}, 1\\right)$ ，则 $a$ 的取值范围为 \\_\\_\\_\\_.",
+  "stem_html": "<h3>12. 已知函数 $f(x) = \\ln x + x^2 + ax$ 的单调递减区间为 $\\left(\\frac{1}{2}, 1\\right)$ ，则 $a$ 的取值范围为 ____.</h3>",
+  "options": {},
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-10T08:17:50.255280+00:00",
+    "question_source_sha256": "7cb6872dd8f9092683f4d213bfc976e0e2eecfc7cc5919b7f6cfa19ef958a3d1",
+    "solution_source_sha256": ""
+  }
+}

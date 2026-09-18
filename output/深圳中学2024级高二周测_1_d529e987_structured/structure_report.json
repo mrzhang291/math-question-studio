@@ -1,0 +1,211 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-11T09:06:33.951979+00:00",
+  "status": "warn",
+  "output_dir": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_1_d529e987_structured",
+  "question_count": 32,
+  "case_count": 2,
+  "cases": [
+    {
+      "exam_code": "exam_4a8a8319c6b6",
+      "source_exam": "深圳中学 2024 级高二数学周测（1）",
+      "question_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_1_d529e987_ocr\\01_深圳中学2024级高二周测_1.md",
+      "solution_file": "",
+      "question_count": 16,
+      "seen": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "missing": [],
+      "duplicates": [],
+      "repairs": [
+        "removed_answer_card"
+      ],
+      "repair_details": [
+        {
+          "code": "removed_answer_card",
+          "label": "移除答题卡",
+          "description": "已在切题前移除答题卡区域，避免把表格内容混入题干。"
+        }
+      ],
+      "structure_before_repair": {
+        "seen": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "duplicates": [
+          12
+        ],
+        "missing": [],
+        "declared_total": 16,
+        "expected_total": 16
+      },
+      "structure_after_repair": {
+        "seen": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "duplicates": [],
+        "missing": [],
+        "declared_total": 16,
+        "expected_total": 16
+      },
+      "resolved_missing": [],
+      "resolved_duplicates": [
+        12
+      ]
+    },
+    {
+      "exam_code": "exam_d0f98e715d39",
+      "source_exam": "深圳中学 2024 级高二数学周测（2）",
+      "question_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_1_d529e987_ocr\\02_深圳中学2024级高二周测_2.md",
+      "solution_file": "",
+      "question_count": 16,
+      "seen": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "missing": [],
+      "duplicates": [],
+      "repairs": [
+        "removed_answer_card"
+      ],
+      "repair_details": [
+        {
+          "code": "removed_answer_card",
+          "label": "移除答题卡",
+          "description": "已在切题前移除答题卡区域，避免把表格内容混入题干。"
+        }
+      ],
+      "structure_before_repair": {
+        "seen": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "duplicates": [
+          12
+        ],
+        "missing": [],
+        "declared_total": 16,
+        "expected_total": 16
+      },
+      "structure_after_repair": {
+        "seen": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "duplicates": [],
+        "missing": [],
+        "declared_total": 16,
+        "expected_total": 16
+      },
+      "resolved_missing": [],
+      "resolved_duplicates": [
+        12
+      ]
+    }
+  ],
+  "quality_flag_counts": {
+    "contains_images": 1,
+    "missing_answer": 32,
+    "missing_solution": 32
+  },
+  "warning_flag_counts": {
+    "missing_answer": 32,
+    "missing_solution": 32
+  },
+  "repair_counts": {
+    "removed_answer_card": 2
+  },
+  "unresolved_missing_count": 0,
+  "unresolved_duplicate_count": 0,
+  "resolved_missing_count": 0,
+  "resolved_duplicate_count": 2,
+  "display_id_count": 32,
+  "duplicate_display_ids": [],
+  "failures": []
+}

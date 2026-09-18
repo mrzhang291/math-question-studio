@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_4a8a8319c6b6_q009",
+  "display_id": "EXAM-4A8A8319C6B6-Q009",
+  "source_exam": "深圳中学 2024 级高二数学周测（1）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_1_d529e987_ocr\\01_深圳中学2024级高二周测_1.md",
+  "solution_file": "",
+  "question_number": 9,
+  "question_type": "multiple_choice",
+  "stem_markdown": "### 9. 下列求导运算正确的是（）\n\nA. $(\\ln7)' = \\frac{1}{7}$\n\nB. $[(x^{2}+2)\\sin x]' = 2x\\sin x + (x^{2}+2)\\cos x$\n\nC. $\\left(\\frac{x^{2}}{\\mathrm{e}^{x}}\\right)'=\\frac{2x-x^{2}}{\\mathrm{e}^{x}}$\n\nD. $[\\ln(3x+2)]'=\\frac{1}{3x+2}$",
+  "stem_html": "<h3>9. 下列求导运算正确的是（）</h3>\n<p>A. $(\\ln7)' = \\frac{1}{7}$</p>\n<p>B. $[(x^{2}+2)\\sin x]' = 2x\\sin x + (x^{2}+2)\\cos x$</p>\n<p>C. $\\left(\\frac{x^{2}}{\\mathrm{e}^{x}}\\right)'=\\frac{2x-x^{2}}{\\mathrm{e}^{x}}$</p>\n<p>D. $[\\ln(3x+2)]'=\\frac{1}{3x+2}$</p>",
+  "options": {
+    "A": "$(\\ln7)' = \\frac{1}{7}$",
+    "B": "$[(x^{2}+2)\\sin x]' = 2x\\sin x + (x^{2}+2)\\cos x$",
+    "C": "$\\left(\\frac{x^{2}}{\\mathrm{e}^{x}}\\right)'=\\frac{2x-x^{2}}{\\mathrm{e}^{x}}$",
+    "D": "$[\\ln(3x+2)]'=\\frac{1}{3x+2}$"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 6,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T09:06:33.876335+00:00",
+    "question_source_sha256": "792c0598f613c48e1cb160411bfdb4297a79c74daab446701006a1d3f8f24f16",
+    "solution_source_sha256": ""
+  }
+}

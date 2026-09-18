@@ -1,0 +1,53 @@
+{
+  "分类讨论": [
+    "exam_a9e115aa7ff5_q004",
+    "exam_a9e115aa7ff5_q006",
+    "exam_a9e115aa7ff5_q007",
+    "exam_af2fc466c95f_q005",
+    "exam_af2fc466c95f_q008",
+    "exam_af2fc466c95f_q014"
+  ],
+  "数形结合": [
+    "exam_a9e115aa7ff5_q003",
+    "exam_a9e115aa7ff5_q005",
+    "exam_a9e115aa7ff5_q010",
+    "exam_a9e115aa7ff5_q015",
+    "exam_a9e115aa7ff5_q016",
+    "exam_af2fc466c95f_q002",
+    "exam_af2fc466c95f_q003",
+    "exam_af2fc466c95f_q012",
+    "exam_af2fc466c95f_q015"
+  ],
+  "运算求解": [
+    "exam_a9e115aa7ff5_q001",
+    "exam_a9e115aa7ff5_q002",
+    "exam_a9e115aa7ff5_q008",
+    "exam_a9e115aa7ff5_q009",
+    "exam_a9e115aa7ff5_q010",
+    "exam_a9e115aa7ff5_q011",
+    "exam_a9e115aa7ff5_q012",
+    "exam_a9e115aa7ff5_q013",
+    "exam_a9e115aa7ff5_q014",
+    "exam_a9e115aa7ff5_q015",
+    "exam_a9e115aa7ff5_q016",
+    "exam_af2fc466c95f_q001",
+    "exam_af2fc466c95f_q003",
+    "exam_af2fc466c95f_q004",
+    "exam_af2fc466c95f_q006",
+    "exam_af2fc466c95f_q007",
+    "exam_af2fc466c95f_q009",
+    "exam_af2fc466c95f_q012",
+    "exam_af2fc466c95f_q013",
+    "exam_af2fc466c95f_q015"
+  ],
+  "逻辑推理": [
+    "exam_a9e115aa7ff5_q006",
+    "exam_a9e115aa7ff5_q015",
+    "exam_a9e115aa7ff5_q016",
+    "exam_af2fc466c95f_q010",
+    "exam_af2fc466c95f_q011",
+    "exam_af2fc466c95f_q014",
+    "exam_af2fc466c95f_q015",
+    "exam_af2fc466c95f_q016"
+  ]
+}

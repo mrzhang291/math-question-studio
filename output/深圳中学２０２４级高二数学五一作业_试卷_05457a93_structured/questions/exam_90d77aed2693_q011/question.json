@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_90d77aed2693_q011",
+  "display_id": "EXAM-90D77AED2693-Q011",
+  "source_exam": "深圳中学 2024 级高二数学 五一作业",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学２０２４级高二数学五一作业_试卷_05457a93_ocr\\01_深圳中学２０２４级高二数学五一作业_试卷.md",
+  "solution_file": "",
+  "question_number": 11,
+  "question_type": "multiple_choice",
+  "stem_markdown": "### 11. 已知函数 $f(x) = a^{2x} - x (a > 0, a \\neq 1)$ ，则下列结论中正确的是（）\n\nA. 函数 $f(x)$ 恒有 1 个极值点\nB. 当 $a = e$ 时，曲线 $y = f(x)$ 恒在曲线 $y = \\ln x + 2$ 上方\nC. 若函数 $f(x)$ 有 2 个零点，则 $1 < a < e^{\\frac{1}{2e}}$\n\nD. 若过点 $P(0, t)$ 存在 2 条直线与曲线 $y = f(x)$ 相切，则 $0 < t < 1$\n\n#",
+  "stem_html": "<h3>11. 已知函数 $f(x) = a^{2x} - x (a &gt; 0, a \\neq 1)$ ，则下列结论中正确的是（）</h3>\n<p>A. 函数 $f(x)$ 恒有 1 个极值点\nB. 当 $a = e$ 时，曲线 $y = f(x)$ 恒在曲线 $y = \\ln x + 2$ 上方\nC. 若函数 $f(x)$ 有 2 个零点，则 $1 &lt; a &lt; e^{\\frac{1}{2e}}$</p>\n<p>D. 若过点 $P(0, t)$ 存在 2 条直线与曲线 $y = f(x)$ 相切，则 $0 &lt; t &lt; 1$</p>\n<h1></h1>",
+  "options": {
+    "A": "函数 $f(x)$ 恒有 1 个极值点",
+    "B": "当 $a = e$ 时，曲线 $y = f(x)$ 恒在曲线 $y = \\ln x + 2$ 上方",
+    "C": "若函数 $f(x)$ 有 2 个零点，则 $1 < a < e^{\\frac{1}{2e}}$",
+    "D": "若过点 $P(0, t)$ 存在 2 条直线与曲线 $y = f(x)$ 相切，则 $0 < t < 1$\n\n#"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": null,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-10T07:15:52.047830+00:00",
+    "question_source_sha256": "15514af6ceb54dc08cbfc8100c7df26b356cb6688fdd3bfe5c4f436c61261dd5",
+    "solution_source_sha256": ""
+  }
+}

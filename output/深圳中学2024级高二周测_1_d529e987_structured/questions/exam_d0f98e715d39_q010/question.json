@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_d0f98e715d39_q010",
+  "display_id": "EXAM-D0F98E715D39-Q010",
+  "source_exam": "深圳中学 2024 级高二数学周测（2）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_1_d529e987_ocr\\02_深圳中学2024级高二周测_2.md",
+  "solution_file": "",
+  "question_number": 10,
+  "question_type": "multiple_choice",
+  "stem_markdown": "### 10. 已知 $0 < x_{1} < x_{2} < 1$ ，则下列不等式恒成立的是（）\n\nA. $x_{2} \\cdot e^{x_{1}} > x_{1} \\cdot e^{x_{2}}$\n\nB. $e^{x_{1}} - e^{x_{2}} > \\ln x_{2} - \\ln x_{1}$\n\nC. $x_{2} \\cdot e^{x_{1}} < x_{1} \\cdot e^{x_{2}}$\n\nD. $e^{x_{1}} - e^{x_{2}} < \\ln x_{2} - \\ln x_{1}$",
+  "stem_html": "<h3>10. 已知 $0 &lt; x_{1} &lt; x_{2} &lt; 1$ ，则下列不等式恒成立的是（）</h3>\n<p>A. $x_{2} \\cdot e^{x_{1}} &gt; x_{1} \\cdot e^{x_{2}}$</p>\n<p>B. $e^{x_{1}} - e^{x_{2}} &gt; \\ln x_{2} - \\ln x_{1}$</p>\n<p>C. $x_{2} \\cdot e^{x_{1}} &lt; x_{1} \\cdot e^{x_{2}}$</p>\n<p>D. $e^{x_{1}} - e^{x_{2}} &lt; \\ln x_{2} - \\ln x_{1}$</p>",
+  "options": {
+    "A": "$x_{2} \\cdot e^{x_{1}} > x_{1} \\cdot e^{x_{2}}$",
+    "B": "$e^{x_{1}} - e^{x_{2}} > \\ln x_{2} - \\ln x_{1}$",
+    "C": "$x_{2} \\cdot e^{x_{1}} < x_{1} \\cdot e^{x_{2}}$",
+    "D": "$e^{x_{1}} - e^{x_{2}} < \\ln x_{2} - \\ln x_{1}$"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 6,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T09:06:33.925723+00:00",
+    "question_source_sha256": "7cb6872dd8f9092683f4d213bfc976e0e2eecfc7cc5919b7f6cfa19ef958a3d1",
+    "solution_source_sha256": ""
+  }
+}

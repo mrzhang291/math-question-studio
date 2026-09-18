@@ -10,6 +10,7 @@ import html
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 from collections import Counter
@@ -20,9 +21,19 @@ from urllib.parse import urlparse
 from gaokao_taxonomy import KNOWLEDGE_TAXONOMY
 
 
+RECOMMENDER_SCRIPTS = Path(__file__).resolve().parents[2] / "smart-question-recommender-v3" / "scripts"
+if str(RECOMMENDER_SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(RECOMMENDER_SCRIPTS))
+
+from recommend_structured_bank import build_safe_pool  # noqa: E402
+
+
 ABILITY_TAGS = ["运算求解", "逻辑推理", "数形结合", "分类讨论", "建模应用"]
 PRIORITY_ORDER = {"high": 0, "medium": 1, "visual": 2}
 FORMULA_SPAN_RE = re.compile(r'<span class="formula" data-formula-id="([^"]*)">(.*?)</span>', re.DOTALL)
+REACT_SHELL_DIR = Path(__file__).resolve().parents[1] / "assets" / "react-shell"
+REACT_SHELL_FILES = ("workbench-shell.js", "workbench-shell.css")
+MATHJAX_ES5_DIR = Path(__file__).resolve().parents[1] / "frontend" / "node_modules" / "mathjax" / "es5"
 
 
 def resolve_live_workbench_url(explicit: str | None = None) -> str:
@@ -148,6 +159,17 @@ def _read_recommendations(bank: Path) -> dict[str, Any]:
     return payload
 
 
+def _read_bank_overview(bank: Path, tagged: list[dict[str, Any]]) -> dict[str, Any]:
+    """Expose current safe-pool counts without relying on a stale recommendation cache."""
+    safe_pool, excluded = build_safe_pool(tagged, bank)
+    return {
+        "bank_question_count": len(tagged),
+        "safe_pool_count": len(safe_pool),
+        "excluded_count": len(excluded),
+        "excluded_reasons": dict(Counter(reason for reasons in excluded.values() for reason in reasons)),
+    }
+
+
 def _read_class_paper(bank: Path) -> dict[str, Any]:
     path = bank / "paper" / "class_paper.json"
     if not path.exists():
@@ -166,7 +188,7 @@ def _normalise_generated_payload(payload: Any) -> Any:
     if isinstance(payload, dict):
         return {
             key: _normalise_formula_text(value)
-            if key in {"stem_markdown", "solution_markdown"}
+            if key in {"stem_markdown", "solution_markdown", "answer"}
             else _normalise_generated_payload(value)
             for key, value in payload.items()
         }
@@ -216,6 +238,9 @@ def _normalise_formula_text(value: str) -> str:
     value = (value or "").replace("^&#x27;", "'").replace("^′", "'").replace("^″", "''")
     value = value.replace("^'", "'")
     value = re.sub(r"(?<=[A-Za-z0-9])_([A-Za-z])_(\d+)", r"_{\1_\2}", value)
+    value = re.sub(r"(?<!\\)\binfinity\b", r"\\infty", value)
+    value = re.sub(r"(?<![A-Za-z\\])sqrt\(([^()\n]+)\)", r"\\sqrt{\1}", value)
+    value = re.sub(r"([A-Za-z0-9)}])\^\(([^()\n]+)\)", r"\1^{\2}", value)
     return value
 
 
@@ -292,6 +317,31 @@ def _template() -> str:
     return path.read_text(encoding="utf-8")
 
 
+def _copy_react_shell(bank: Path) -> None:
+    missing = [name for name in REACT_SHELL_FILES if not (REACT_SHELL_DIR / name).is_file()]
+    if missing:
+        raise SystemExit(f"React workbench shell not built; run npm --prefix {REACT_SHELL_DIR.parent / 'frontend'} run build (missing: {', '.join(missing)})")
+    for name in REACT_SHELL_FILES:
+        shutil.copy2(REACT_SHELL_DIR / name, bank / "review" / name)
+
+
+def _copy_mathjax(bank: Path) -> None:
+    """Publish MathJax beside the workbench so formula rendering is fully local."""
+    entrypoint = MATHJAX_ES5_DIR / "tex-mml-chtml.js"
+    if not entrypoint.is_file():
+        raise SystemExit(
+            "Local MathJax is missing; run npm --prefix smart-question-tagger/frontend install"
+        )
+    shutil.copytree(MATHJAX_ES5_DIR, bank / "review" / "mathjax", dirs_exist_ok=True)
+
+
+def _react_shell_version() -> str:
+    digest = hashlib.sha256()
+    for name in REACT_SHELL_FILES:
+        digest.update((REACT_SHELL_DIR / name).read_bytes())
+    return digest.hexdigest()[:12]
+
+
 def build_workbench(bank: Path, live_url: str | None = None) -> dict[str, Any]:
     bank = bank.resolve()
     live_url = resolve_live_workbench_url(live_url)
@@ -302,15 +352,36 @@ def build_workbench(bank: Path, live_url: str | None = None) -> dict[str, Any]:
     audit = _read_audit(bank / "audit" / "tag_quality_audit.csv")
     items = _queue_items(tagged, audit)
     counts = Counter(item["priority"] for item in items)
+    recommendations = _read_recommendations(bank)
+    bank_overview = _read_bank_overview(bank, tagged)
     payload = {
         "schema_version": "teacher-workbench-v2",
         "bank_name": bank.name,
         "items": items,
+        "all_questions": [
+            {
+                "question_id": question.get("question_id", ""),
+                "display_id": question.get("display_id") or question.get("question_id", ""),
+                "source_exam": question.get("source_exam") or "",
+                "question_number": question.get("question_number"),
+                "question_type": question.get("question_type") or "",
+                "primary_knowledge": (question.get("tags") or {}).get("primary_knowledge") or "",
+                "needs_teacher_review": bool((question.get("tags") or {}).get("needs_teacher_review")),
+                "stem_html": _math_html(_asset_paths(question.get("stem_html") or "", question.get("question_id", ""))),
+                "stem_markdown": question.get("stem_markdown") or "",
+                "solution_html": _math_html(_asset_paths(question.get("solution_html") or "", question.get("question_id", ""))),
+                "solution_markdown": question.get("solution_markdown") or "",
+                "answer": str(question.get("answer") or ""),
+            }
+            for question in tagged
+            if isinstance(question, dict)
+        ],
         "taxonomy": KNOWLEDGE_TAXONOMY,
         "ability_tags": ABILITY_TAGS,
         "priority_counts": {key: counts.get(key, 0) for key in ("high", "medium", "visual")},
         "student_performance": _read_performance(bank),
-        "recommendations": _read_recommendations(bank),
+        "recommendations": recommendations,
+        "bank_overview": bank_overview,
         "class_paper": _read_class_paper(bank),
         "generated_questions": _read_generated_questions(bank),
         "generated_question_candidates": _read_generated_candidates(bank),
@@ -321,13 +392,18 @@ def build_workbench(bank: Path, live_url: str | None = None) -> dict[str, Any]:
     output.parent.mkdir(parents=True, exist_ok=True)
     rendered = _template().replace("__WORKBENCH_DATA__", payload_json)
     rendered = rendered.replace("__LIVE_WORKBENCH_URL__", json.dumps(live_url, ensure_ascii=False))
+    rendered = rendered.replace("__WORKBENCH_BANK_NAME__", html.escape(bank.name, quote=True))
+    rendered = rendered.replace("__REACT_SHELL_VERSION__", _react_shell_version())
     output.write_text(rendered, encoding="utf-8")
+    _copy_react_shell(bank)
+    _copy_mathjax(bank)
     _inject_root_link(bank, live_url)
     return {
         "review_workbench": str(output), "review_queue": len(items), "priority_counts": dict(payload["priority_counts"]),
         "review_queue_sources": {"tagging_risk_candidates": sum(bool((item.get("tags") or {}).get("needs_teacher_review")) for item in tagged), "rule_audit_candidates": len(audit), "combined_unique_candidates": len(items)},
         "student_performance": {"simulated": payload["student_performance"].get("simulated", False), "student_count": payload["student_performance"].get("student_count", 0), "question_count": payload["student_performance"].get("question_count", 0)},
         "recommendations": {"student_count": payload["recommendations"].get("student_count", 0), "safe_pool_count": payload["recommendations"].get("safe_pool_count", 0)},
+        "bank_overview": payload["bank_overview"],
         "class_paper": {"question_count": payload["class_paper"].get("question_count", 0), "total_points": payload["class_paper"].get("total_points", 0), "knowledge_coverage_count": payload["class_paper"].get("knowledge_coverage_count", 0)},
         "generated_questions": {"question_count": len(payload["generated_questions"].get("questions") or []), "status": payload["generated_questions"].get("status")},
         "generated_question_candidates": {"slot_count": len(payload["generated_question_candidates"].get("slots") or []), "candidate_count": sum(len(row.get("candidates") or []) for row in payload["generated_question_candidates"].get("slots") or [])},

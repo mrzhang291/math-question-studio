@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_a9e115aa7ff5_q015",
+  "display_id": "EXAM-A9E115AA7FF5-Q015",
+  "source_exam": "深圳中学 2024 级高二数学周测（4）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_3_eb00bedd_ocr\\02_深圳中学2024级高二周测_4.md",
+  "solution_file": "",
+  "question_number": 15,
+  "question_type": "solution",
+  "stem_markdown": "### 15. 已知函数 $f(x) = a^2 x^2 - 3ax \\ln x, a > 0$\n\n(1)当 $a = 1$ 时，求曲线 $y = f(x)$ 在 $\\left(1, f(1)\\right)$ 处的切线方程；\n\n(2)讨论 $f(x)$ 的零点个数.",
+  "stem_html": "<h3>15. 已知函数 $f(x) = a^2 x^2 - 3ax \\ln x, a &gt; 0$</h3>\n<p>(1)当 $a = 1$ 时，求曲线 $y = f(x)$ 在 $\\left(1, f(1)\\right)$ 处的切线方程；</p>\n<p>(2)讨论 $f(x)$ 的零点个数.</p>",
+  "options": {},
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": null,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T01:40:53.525969+00:00",
+    "question_source_sha256": "3b66a6712b18cf29a48505581ccb4101bdac1d317dc48ad708df186a813b1f4f",
+    "solution_source_sha256": ""
+  }
+}

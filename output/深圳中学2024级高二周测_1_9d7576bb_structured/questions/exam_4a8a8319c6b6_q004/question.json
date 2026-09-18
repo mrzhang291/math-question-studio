@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_4a8a8319c6b6_q004",
+  "display_id": "EXAM-4A8A8319C6B6-Q004",
+  "source_exam": "深圳中学 2024 级高二数学周测（1）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_1_9d7576bb_ocr\\01_深圳中学2024级高二周测_1.md",
+  "solution_file": "",
+  "question_number": 4,
+  "question_type": "single_choice",
+  "stem_markdown": "### 4. 函数 $f(x)$ 的导函数 $f'(x)$ ，满足关系式 $f(x)=x^{2}+2xf'(2)-\\ln x$ ，则 $f'(2)$ 的值为（）\n\nA. $-\\frac{7}{2}$\n\nB. $\\frac{7}{2}$\n\nC. $-\\frac{1}{2}$\n\nD. $\\frac{1}{2}$",
+  "stem_html": "<h3>4. 函数 $f(x)$ 的导函数 $f'(x)$ ，满足关系式 $f(x)=x^{2}+2xf'(2)-\\ln x$ ，则 $f'(2)$ 的值为（）</h3>\n<p>A. $-\\frac{7}{2}$</p>\n<p>B. $\\frac{7}{2}$</p>\n<p>C. $-\\frac{1}{2}$</p>\n<p>D. $\\frac{1}{2}$</p>",
+  "options": {
+    "A": "$-\\frac{7}{2}$",
+    "B": "$\\frac{7}{2}$",
+    "C": "$-\\frac{1}{2}$",
+    "D": "$\\frac{1}{2}$"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-10T08:17:50.197682+00:00",
+    "question_source_sha256": "792c0598f613c48e1cb160411bfdb4297a79c74daab446701006a1d3f8f24f16",
+    "solution_source_sha256": ""
+  }
+}

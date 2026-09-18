@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_4a8a8319c6b6_q013",
+  "display_id": "EXAM-4A8A8319C6B6-Q013",
+  "source_exam": "深圳中学 2024 级高二数学周测（1）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_1_9d7576bb_ocr\\01_深圳中学2024级高二周测_1.md",
+  "solution_file": "",
+  "question_number": 13,
+  "question_type": "fill_blank",
+  "stem_markdown": "### 13. 若曲线 $y = (x + a)e^{x}$ 有两条过坐标原点的切线，则 $a$ 的取值范围是 \\_\\_\\_\\_.",
+  "stem_html": "<h3>13. 若曲线 $y = (x + a)e^{x}$ 有两条过坐标原点的切线，则 $a$ 的取值范围是 ____.</h3>",
+  "options": {},
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-10T08:17:50.218572+00:00",
+    "question_source_sha256": "792c0598f613c48e1cb160411bfdb4297a79c74daab446701006a1d3f8f24f16",
+    "solution_source_sha256": ""
+  }
+}

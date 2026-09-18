@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-13T10:54:42.014771+00:00",
+  "source_ocr_dir": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学２０２４级高二数学五一作业_试卷_0f83d109_ocr",
+  "questions": 19,
+  "cases": [
+    {
+      "exam_code": "exam_90d77aed2693",
+      "source_exam": "深圳中学 2024 级高二数学 五一作业",
+      "question_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学２０２４级高二数学五一作业_试卷_0f83d109_ocr\\01_深圳中学２０２４级高二数学五一作业_试卷.md",
+      "solution_file": "",
+      "question_count": 19,
+      "seen": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "missing": [],
+      "duplicates": [],
+      "repairs": [
+        "joined_broken_decimals"
+      ],
+      "repair_details": [
+        {
+          "code": "joined_broken_decimals",
+          "label": "修复跨行小数",
+          "description": "已合并被 OCR 错误断开的 0.x / 1.x 小数。"
+        }
+      ],
+      "structure_before_repair": {
+        "seen": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "duplicates": [],
+        "missing": [],
+        "declared_total": null,
+        "expected_total": 19
+      },
+      "structure_after_repair": {
+        "seen": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "duplicates": [],
+        "missing": [],
+        "declared_total": null,
+        "expected_total": 19
+      },
+      "resolved_missing": [],
+      "resolved_duplicates": []
+    }
+  ]
+}

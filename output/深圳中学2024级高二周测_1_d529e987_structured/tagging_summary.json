@@ -1,0 +1,26 @@
+{
+  "questions": 32,
+  "teacher_review_candidates": 32,
+  "confidence_threshold": 0.8,
+  "confidence_min": 0.708,
+  "confidence_max": 0.932,
+  "confidence_average": 0.824,
+  "confidence_bands": {
+    "high_>=0.80": 21,
+    "medium_0.65-0.79": 11
+  },
+  "review_reasons": {
+    "confidence_below_threshold": 11,
+    "contains_images": 1,
+    "structure_quality_warning": 32
+  },
+  "curriculum_themes": {
+    "T2函数": 4,
+    "T7导数": 28
+  },
+  "review_queue_sources": {
+    "tagging_risk_candidates": 32,
+    "rule_audit_candidates": 13,
+    "combined_unique_candidates": 32
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_90d77aed2693_q010",
+  "display_id": "EXAM-90D77AED2693-Q010",
+  "source_exam": "深圳中学 2024 级高二数学 五一作业",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学２０２４级高二数学五一作业_试卷_05457a93_ocr\\01_深圳中学２０２４级高二数学五一作业_试卷.md",
+  "solution_file": "",
+  "question_number": 10,
+  "question_type": "multiple_choice",
+  "stem_markdown": "### 10. 下列不等关系中，正确的是（）\n\nA. $\\ln2<\\frac{2}{e}$\n\nB. $\\frac{\\ln3}{\\ln\\pi}<\\frac{3}{\\pi}$\n\nC. $\\frac{e}{2}>\\ln3$\n\nD. $\\sqrt{e}>2-\\ln2$",
+  "stem_html": "<h3>10. 下列不等关系中，正确的是（）</h3>\n<p>A. $\\ln2&lt;\\frac{2}{e}$</p>\n<p>B. $\\frac{\\ln3}{\\ln\\pi}&lt;\\frac{3}{\\pi}$</p>\n<p>C. $\\frac{e}{2}&gt;\\ln3$</p>\n<p>D. $\\sqrt{e}&gt;2-\\ln2$</p>",
+  "options": {
+    "A": "$\\ln2<\\frac{2}{e}$",
+    "B": "$\\frac{\\ln3}{\\ln\\pi}<\\frac{3}{\\pi}$",
+    "C": "$\\frac{e}{2}>\\ln3$",
+    "D": "$\\sqrt{e}>2-\\ln2$"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": null,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-10T07:15:52.045199+00:00",
+    "question_source_sha256": "15514af6ceb54dc08cbfc8100c7df26b356cb6688fdd3bfe5c4f436c61261dd5",
+    "solution_source_sha256": ""
+  }
+}

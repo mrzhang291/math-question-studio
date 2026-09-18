@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_4a8a8319c6b6_q005",
+  "display_id": "EXAM-4A8A8319C6B6-Q005",
+  "source_exam": "深圳中学 2024 级高二数学周测（1）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_1_d529e987_ocr\\01_深圳中学2024级高二周测_1.md",
+  "solution_file": "",
+  "question_number": 5,
+  "question_type": "single_choice",
+  "stem_markdown": "### 5. 点 $P$ 在曲线 $y = x^3 - x + \\frac{2}{3}$ 上，设曲线在点 $P$ 处切线的倾斜角为 $\\alpha$ ，则角 $\\alpha$ 的取值范围是（）\n\nA. $\\left[0, \\frac{\\pi}{2}\\right)$\n\nB. $\\left[0, \\frac{\\pi}{2}\\right) \\cup \\left(-\\frac{\\pi}{2}, 0\\right)$\n\nC. $\\left[\\frac{3\\pi}{4}, \\pi\\right)$\n\nD. $\\left[0, \\frac{\\pi}{2}\\right) \\cup \\left[\\frac{3\\pi}{4}, \\pi\\right)$",
+  "stem_html": "<h3>5. 点 $P$ 在曲线 $y = x^3 - x + \\frac{2}{3}$ 上，设曲线在点 $P$ 处切线的倾斜角为 $\\alpha$ ，则角 $\\alpha$ 的取值范围是（）</h3>\n<p>A. $\\left[0, \\frac{\\pi}{2}\\right)$</p>\n<p>B. $\\left[0, \\frac{\\pi}{2}\\right) \\cup \\left(-\\frac{\\pi}{2}, 0\\right)$</p>\n<p>C. $\\left[\\frac{3\\pi}{4}, \\pi\\right)$</p>\n<p>D. $\\left[0, \\frac{\\pi}{2}\\right) \\cup \\left[\\frac{3\\pi}{4}, \\pi\\right)$</p>",
+  "options": {
+    "A": "$\\left[0, \\frac{\\pi}{2}\\right)$",
+    "B": "$\\left[0, \\frac{\\pi}{2}\\right) \\cup \\left(-\\frac{\\pi}{2}, 0\\right)$",
+    "C": "$\\left[\\frac{3\\pi}{4}, \\pi\\right)$",
+    "D": "$\\left[0, \\frac{\\pi}{2}\\right) \\cup \\left[\\frac{3\\pi}{4}, \\pi\\right)$"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T09:06:33.861877+00:00",
+    "question_source_sha256": "792c0598f613c48e1cb160411bfdb4297a79c74daab446701006a1d3f8f24f16",
+    "solution_source_sha256": ""
+  }
+}

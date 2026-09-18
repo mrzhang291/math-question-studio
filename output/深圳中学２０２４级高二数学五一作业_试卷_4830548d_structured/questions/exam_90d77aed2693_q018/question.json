@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_90d77aed2693_q018",
+  "display_id": "EXAM-90D77AED2693-Q018",
+  "source_exam": "深圳中学 2024 级高二数学 五一作业",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学２０２４级高二数学五一作业_试卷_4830548d_ocr\\01_深圳中学２０２４级高二数学五一作业_试卷.md",
+  "solution_file": "",
+  "question_number": 18,
+  "question_type": "solution",
+  "stem_markdown": "### 18. 已知函数 $f(x) = \\ln (x + 1) + \\frac{1}{2} x^2$ .\n\n(1)若函数 $h(x)=f(x)-a(x+1)^{2}$ 不单调，求实数a的取值范围；\n\n(2)若曲线 $y = f(x)$ 与直线 y = ax 有且仅有一个交点，求实数 a 的取值范围.",
+  "stem_html": "<h3>18. 已知函数 $f(x) = \\ln (x + 1) + \\frac{1}{2} x^2$ .</h3>\n<p>(1)若函数 $h(x)=f(x)-a(x+1)^{2}$ 不单调，求实数a的取值范围；</p>\n<p>(2)若曲线 $y = f(x)$ 与直线 y = ax 有且仅有一个交点，求实数 a 的取值范围.</p>",
+  "options": {},
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": null,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-10T08:31:22.200073+00:00",
+    "question_source_sha256": "15514af6ceb54dc08cbfc8100c7df26b356cb6688fdd3bfe5c4f436c61261dd5",
+    "solution_source_sha256": ""
+  }
+}

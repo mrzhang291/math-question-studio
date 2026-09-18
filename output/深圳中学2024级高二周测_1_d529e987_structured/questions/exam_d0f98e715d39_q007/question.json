@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_d0f98e715d39_q007",
+  "display_id": "EXAM-D0F98E715D39-Q007",
+  "source_exam": "深圳中学 2024 级高二数学周测（2）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_1_d529e987_ocr\\02_深圳中学2024级高二周测_2.md",
+  "solution_file": "",
+  "question_number": 7,
+  "question_type": "single_choice",
+  "stem_markdown": "### 7. 已知 $a = \\sin 0.5, b = 3^{0.5}, c = \\log_{0.3} 0.5$ ，则 $a, b, c$ 的大小关系是（）\n\nA. $a < b < c$\n\nB. $a < c < b$\n\nC. $c < a < b$\n\nD. $c < b < a$",
+  "stem_html": "<h3>7. 已知 $a = \\sin 0.5, b = 3^{0.5}, c = \\log_{0.3} 0.5$ ，则 $a, b, c$ 的大小关系是（）</h3>\n<p>A. $a &lt; b &lt; c$</p>\n<p>B. $a &lt; c &lt; b$</p>\n<p>C. $c &lt; a &lt; b$</p>\n<p>D. $c &lt; b &lt; a$</p>",
+  "options": {
+    "A": "$a < b < c$",
+    "B": "$a < c < b$",
+    "C": "$c < a < b$",
+    "D": "$c < b < a$"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T09:06:33.917207+00:00",
+    "question_source_sha256": "7cb6872dd8f9092683f4d213bfc976e0e2eecfc7cc5919b7f6cfa19ef958a3d1",
+    "solution_source_sha256": ""
+  }
+}

@@ -290,7 +290,7 @@ class GeneratedQuestionGateTests(unittest.TestCase):
             self.assertEqual(len(payload["slots"][0]["candidates"]), 3)
             self.assertEqual(
                 payload["slots"][0]["recommendation_logic_version"],
-                "knowledge-teaching-chain-scoring-v1",
+                "knowledge-teaching-chain-scoring-v2",
             )
             self.assertEqual(len(payload["slots"][0]["candidate_ranking"]), 3)
             candidate = payload["slots"][0]["candidates"][0]
@@ -298,6 +298,64 @@ class GeneratedQuestionGateTests(unittest.TestCase):
             self.assertIn("recommendation_score", candidate["generation"])
             self.assertIn(candidate["verification"]["estimated_level"], {1, 2, 3, 4, 5})
             self.assertIn(candidate["verification"]["difficulty_matches"], {True, False})
+
+    def test_teacher_feedback_reduces_matching_candidate_rank(self) -> None:
+        knowledge = "导数与微分·求导运算·基本函数求导"
+        with tempfile.TemporaryDirectory() as directory:
+            bank = Path(directory)
+            (bank / "tags").mkdir(parents=True)
+            rows = [
+                {
+                    "question_id": f"source_q{index + 1:03d}",
+                    "display_id": f"SOURCE-{index + 1:03d}",
+                    "source_exam": "示例题库",
+                    "question_number": index + 1,
+                    "question_type": "single_choice",
+                    "stem_markdown": f"安全参考题 {index + 1}",
+                    "answer": "A",
+                    "solution_markdown": "完整解析。",
+                    "quality_flags": [],
+                    "tags": {
+                        "primary_knowledge": knowledge,
+                        "curriculum_theme": "T1",
+                        "knowledge_unit": "U1",
+                        "classification_margin": 0.3,
+                        "tags_confidence_detail": {
+                            "overall": 0.92,
+                            "primary_knowledge": 0.91,
+                            "structure": 0.95,
+                        },
+                    },
+                }
+                for index in range(3)
+            ]
+            (bank / "tags" / "all_question_tags.json").write_text(
+                json.dumps(rows, ensure_ascii=False), encoding="utf-8"
+            )
+            generate_personalized_pool(bank)
+            initial = json.loads(
+                (bank / "generation" / "student_generated_question_candidates.json").read_text(encoding="utf-8")
+            )["slots"][0]["candidates"][0]
+            feedback_path = bank / "generation" / "teacher_quality_feedback.jsonl"
+            feedback_path.write_text(
+                json.dumps(
+                    {
+                        "feedback_type": "duplicate_structure",
+                        "pedagogical_fingerprint": initial["generation"]["pedagogical_fingerprint"],
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            generate_personalized_pool(bank)
+            updated = json.loads(
+                (bank / "generation" / "student_generated_question_candidates.json").read_text(encoding="utf-8")
+            )["slots"][0]["candidates"][0]
+            score = updated["generation"]["recommendation_score"]
+            self.assertEqual(score["feedback_penalty"], 1.0)
+            self.assertIn("duplicate_structure", score["feedback_matches"])
+            self.assertLess(score["score"], initial["generation"]["recommendation_score"]["score"])
 
     def test_offline_recommendation_rules_distinguish_formula_and_transfer_tasks(self) -> None:
         basic_stem = (

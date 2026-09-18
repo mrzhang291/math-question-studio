@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_4a8a8319c6b6_q014",
+  "display_id": "EXAM-4A8A8319C6B6-Q014",
+  "source_exam": "深圳中学 2024 级高二数学周测（1）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_1_9d7576bb_ocr\\01_深圳中学2024级高二周测_1.md",
+  "solution_file": "",
+  "question_number": 14,
+  "question_type": "fill_blank",
+  "stem_markdown": "### 14. 已知函数 $f(x) = |e^x - 1|, x_1 < 0, x_2 > 0$ ，函数 $f(x)$ 的图象在点 $A(x_1, f(x_1))$ 和点 $B(x_2, f(x_2))$ 的两条切线互相垂直，且分别交 $y$ 轴于 $M$ ， $N$ 两点，则 $\\frac{|AM|}{|BN|}$ 取值范围是 \\_\\_\\_\\_.",
+  "stem_html": "<h3>14. 已知函数 $f(x) = |e^x - 1|, x_1 &lt; 0, x_2 &gt; 0$ ，函数 $f(x)$ 的图象在点 $A(x_1, f(x_1))$ 和点 $B(x_2, f(x_2))$ 的两条切线互相垂直，且分别交 $y$ 轴于 $M$ ， $N$ 两点，则 $\\frac{|AM|}{|BN|}$ 取值范围是 ____.</h3>",
+  "options": {},
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": 5,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-10T08:17:50.221332+00:00",
+    "question_source_sha256": "792c0598f613c48e1cb160411bfdb4297a79c74daab446701006a1d3f8f24f16",
+    "solution_source_sha256": ""
+  }
+}

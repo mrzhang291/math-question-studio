@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_90d77aed2693_q001",
+  "display_id": "EXAM-90D77AED2693-Q001",
+  "source_exam": "深圳中学 2024 级高二数学 五一作业",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学２０２４级高二数学五一作业_试卷_0f83d109_ocr\\01_深圳中学２０２４级高二数学五一作业_试卷.md",
+  "solution_file": "",
+  "question_number": 1,
+  "question_type": "single_choice",
+  "stem_markdown": "### 1. 下列导数运算正确的是（）\n\nA. $\\left(\\ln x + \\cos x\\right)' = \\frac{1}{x} + \\sin x$\n\nB. $\\left(\\sqrt{x}\\right)' = \\frac{1}{\\sqrt{x}}$\n\nC. 若 $f(x)=3x^{2}-f'(1)x$ ，则 $f'(1)=3$\n\nD. $\\left(x^{3}e^{x}\\right)' = 3x^{2}e^{x}$",
+  "stem_html": "<h3>1. 下列导数运算正确的是（）</h3>\n<p>A. $\\left(\\ln x + \\cos x\\right)' = \\frac{1}{x} + \\sin x$</p>\n<p>B. $\\left(\\sqrt{x}\\right)' = \\frac{1}{\\sqrt{x}}$</p>\n<p>C. 若 $f(x)=3x^{2}-f'(1)x$ ，则 $f'(1)=3$</p>\n<p>D. $\\left(x^{3}e^{x}\\right)' = 3x^{2}e^{x}$</p>",
+  "options": {
+    "A": "$\\left(\\ln x + \\cos x\\right)' = \\frac{1}{x} + \\sin x$",
+    "B": "$\\left(\\sqrt{x}\\right)' = \\frac{1}{\\sqrt{x}}$",
+    "C": "若 $f(x)=3x^{2}-f'(1)x$ ，则 $f'(1)=3$",
+    "D": "$\\left(x^{3}e^{x}\\right)' = 3x^{2}e^{x}$"
+  },
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": null,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-13T10:54:41.969320+00:00",
+    "question_source_sha256": "15514af6ceb54dc08cbfc8100c7df26b356cb6688fdd3bfe5c4f436c61261dd5",
+    "solution_source_sha256": ""
+  }
+}

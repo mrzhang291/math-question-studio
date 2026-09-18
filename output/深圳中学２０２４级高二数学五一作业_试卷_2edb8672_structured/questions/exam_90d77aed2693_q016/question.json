@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_90d77aed2693_q016",
+  "display_id": "EXAM-90D77AED2693-Q016",
+  "source_exam": "深圳中学 2024 级高二数学 五一作业",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学２０２４级高二数学五一作业_试卷_2edb8672_ocr\\01_深圳中学２０２４级高二数学五一作业_试卷.md",
+  "solution_file": "",
+  "question_number": 16,
+  "question_type": "solution",
+  "stem_markdown": "### 16. 某篮球运动员在训练中进行投篮练习. 已知其 2 分球的命中率为 0.8, 3 分球的命中率为\n\n### 0.5，且每次投篮结果相互独立。在每次投篮前，他可以根据场上情况选择投2分球或3分球。\n\n(1)若该运动员等可能地选择投2分球或3分球，求他投一次篮命中的概率：\n\n(2)现该运动员拥有连续2次投篮的机会，他制定了如下策略：\n\n若第一次命中，则第二次继续选择同一类型的投篮；若第一次未命中，则第二次更换为另一种类型的投篮，求该策略下，这名运动员第一次投篮应该怎么选择可以使得两次投篮总得分的期望最大.",
+  "stem_html": "<h3>16. 某篮球运动员在训练中进行投篮练习. 已知其 2 分球的命中率为 0.8, 3 分球的命中率为</h3>\n<h3>0.5，且每次投篮结果相互独立。在每次投篮前，他可以根据场上情况选择投2分球或3分球。</h3>\n<p>(1)若该运动员等可能地选择投2分球或3分球，求他投一次篮命中的概率：</p>\n<p>(2)现该运动员拥有连续2次投篮的机会，他制定了如下策略：</p>\n<p>若第一次命中，则第二次继续选择同一类型的投篮；若第一次未命中，则第二次更换为另一种类型的投篮，求该策略下，这名运动员第一次投篮应该怎么选择可以使得两次投篮总得分的期望最大.</p>",
+  "options": {},
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": null,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-10T08:14:07.616737+00:00",
+    "question_source_sha256": "15514af6ceb54dc08cbfc8100c7df26b356cb6688fdd3bfe5c4f436c61261dd5",
+    "solution_source_sha256": ""
+  }
+}

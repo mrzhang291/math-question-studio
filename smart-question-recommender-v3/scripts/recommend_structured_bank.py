@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import random
 import re
 import sys
@@ -18,6 +19,20 @@ from typing import Any, Iterable
 
 PRIOR_MASTERY = 0.65
 PRIOR_WEIGHT = 2.0
+MASTERY_MODEL_VERSION = "bkt-beta-blend-v1"
+BKT_SLIP = 0.14
+BKT_LEARNING_RATE = 0.03
+BKT_BLEND_EVIDENCE = 6.0
+BKT_GUESS_BY_QUESTION_TYPE = {
+    "single_choice": 0.25,
+    "multiple_choice": 0.05,
+    "fill_blank": 0.01,
+    "solution": 0.01,
+}
+TARGET_SUCCESS_PROBABILITY = 0.70
+TARGET_SUCCESS_WIDTH = 0.20
+COHORT_SHRINKAGE_WEIGHT = 8.0
+MMR_DIVERSITY_PENALTY = 0.12
 MIN_OVERALL_CONFIDENCE = 0.85
 MIN_PRIMARY_CONFIDENCE = 0.80
 MIN_CLASSIFICATION_MARGIN = 0.12
@@ -52,6 +67,33 @@ def _write_jsonl(path: Path, rows: Iterable[dict[str, Any]]) -> None:
 
 def _clamp(value: float, low: float = 0.0, high: float = 1.0) -> float:
     return max(low, min(high, value))
+
+
+def _sigmoid(value: float) -> float:
+    if value >= 0:
+        return 1.0 / (1.0 + math.exp(-value))
+    exponent = math.exp(value)
+    return exponent / (1.0 + exponent)
+
+
+def _logit(probability: float) -> float:
+    probability = _clamp(probability, 0.001, 0.999)
+    return math.log(probability / (1.0 - probability))
+
+
+def _bkt_update(mastery: float, score_ratio: float, question_type: str) -> float:
+    """Apply a conservative fractional BKT update for scored high-school questions."""
+    mastery = _clamp(mastery)
+    score_ratio = _clamp(score_ratio)
+    guess = BKT_GUESS_BY_QUESTION_TYPE.get(question_type, 0.01)
+    correct_denominator = mastery * (1.0 - BKT_SLIP) + (1.0 - mastery) * guess
+    wrong_denominator = mastery * BKT_SLIP + (1.0 - mastery) * (1.0 - guess)
+    if not correct_denominator or not wrong_denominator:
+        return mastery
+    given_correct = mastery * (1.0 - BKT_SLIP) / correct_denominator
+    given_wrong = mastery * BKT_SLIP / wrong_denominator
+    observed = score_ratio * given_correct + (1.0 - score_ratio) * given_wrong
+    return _clamp(observed + (1.0 - observed) * BKT_LEARNING_RATE)
 
 
 def _normalise_stem(value: str) -> str:
@@ -160,8 +202,10 @@ def build_mastery_rows(
     for student in students:
         grouped: dict[str, dict[str, Any]] = defaultdict(
             lambda: {
-                "performance_sum": 0.0,
                 "evidence_weight": 0.0,
+                "beta_alpha": PRIOR_MASTERY * PRIOR_WEIGHT,
+                "beta_beta": (1.0 - PRIOR_MASTERY) * PRIOR_WEIGHT,
+                "bkt_mastery": PRIOR_MASTERY,
                 "attempts": 0,
                 "correct": 0,
                 "wrongs": 0,
@@ -186,8 +230,12 @@ def build_mastery_rows(
                 continue
             full_score = float(answer.get("full_score") or question.get("full_score") or 1)
             performance = _clamp(float(answer.get("score") or 0) / full_score) if full_score else 0.0
-            item["performance_sum"] += performance
             item["evidence_weight"] += 1.0
+            item["beta_alpha"] += performance
+            item["beta_beta"] += 1.0 - performance
+            item["bkt_mastery"] = _bkt_update(
+                float(item["bkt_mastery"]), performance, str(question.get("question_type") or "")
+            )
             item["attempts"] += 1
             if performance >= 0.999:
                 item["correct"] += 1
@@ -199,9 +247,13 @@ def build_mastery_rows(
             item["confidences"].append(float(detail.get("primary_knowledge") or tags.get("tags_confidence") or 0))
 
         for tag_name, item in grouped.items():
-            mastery = (
-                PRIOR_MASTERY * PRIOR_WEIGHT + item["performance_sum"]
-            ) / (PRIOR_WEIGHT + item["evidence_weight"])
+            beta_total = float(item["beta_alpha"]) + float(item["beta_beta"])
+            beta_mastery = float(item["beta_alpha"]) / beta_total
+            beta_uncertainty = beta_mastery * (1.0 - beta_mastery) / (beta_total + 1.0)
+            bkt_weight = float(item["evidence_weight"]) / (
+                float(item["evidence_weight"]) + BKT_BLEND_EVIDENCE
+            )
+            mastery = (1.0 - bkt_weight) * beta_mastery + bkt_weight * float(item["bkt_mastery"])
             confidence = (
                 sum(item["confidences"]) / len(item["confidences"])
                 if item["confidences"]
@@ -209,12 +261,17 @@ def build_mastery_rows(
             )
             rows.append(
                 {
-                    "schema_version": "student-mastery-v2",
+                    "schema_version": "student-mastery-v3",
+                    "mastery_model": MASTERY_MODEL_VERSION,
                     "simulated": bool(student.get("simulated")),
                     "student_id": student["student_id"],
                     "name": student.get("name") or student["student_id"],
                     "tag_name": tag_name,
                     "mastery_score": round(mastery, 3),
+                    "beta_mastery_score": round(beta_mastery, 3),
+                    "bkt_mastery_score": round(float(item["bkt_mastery"]), 3),
+                    "mastery_uncertainty": round(beta_uncertainty, 4),
+                    "bkt_blend_weight": round(bkt_weight, 3),
                     "status": _mastery_status(mastery),
                     "attempts": item["attempts"],
                     "correct": item["correct"],
@@ -261,6 +318,36 @@ def _target_difficulty(mastery: float) -> float:
     return 3.5
 
 
+def _smoothed_cohort_rate(performance: dict[str, Any]) -> float:
+    observed_rate = _clamp(float(performance.get("correct_rate", PRIOR_MASTERY)))
+    attempts = max(0.0, float(performance.get("correct", 0)) + float(performance.get("wrong", 0)))
+    evidence_weight = attempts if attempts else 1.0
+    return (observed_rate * evidence_weight + PRIOR_MASTERY * COHORT_SHRINKAGE_WEIGHT) / (
+        evidence_weight + COHORT_SHRINKAGE_WEIGHT
+    )
+
+
+def _item_response_scores(
+    mastery: float, question_type: str, performance: dict[str, Any]
+) -> tuple[float, float]:
+    """Return predicted success and normalized Fisher information from a shrunk 1PL item prior."""
+    guess = BKT_GUESS_BY_QUESTION_TYPE.get(question_type, 0.01)
+    cohort_rate = _smoothed_cohort_rate(performance)
+    non_guess_rate = _clamp((cohort_rate - guess) / (1.0 - guess), 0.01, 0.99)
+    difficulty = _logit(PRIOR_MASTERY) - _logit(non_guess_rate)
+    latent_success = _sigmoid(_logit(mastery) - difficulty)
+    success = guess + (1.0 - guess) * latent_success
+    derivative = (1.0 - guess) * latent_success * (1.0 - latent_success)
+    information = derivative * derivative / max(success * (1.0 - success), 0.0001)
+    return _clamp(success), _clamp(information / 0.25)
+
+
+def _mastery_uncertainty_score(weak: dict[str, Any]) -> float:
+    uncertainty = float(weak.get("mastery_uncertainty") or 0.0)
+    prior_uncertainty = PRIOR_MASTERY * (1.0 - PRIOR_MASTERY) / (PRIOR_WEIGHT + 1.0)
+    return _clamp(uncertainty / prior_uncertainty) if prior_uncertainty else 0.0
+
+
 def _knowledge_match(question: dict[str, Any], weak: dict[str, Any], tag_themes: dict[str, str]) -> float:
     tags = question.get("tags") or {}
     target = weak["tag_name"]
@@ -282,26 +369,36 @@ def _score_candidate(
     tags = question.get("tags") or {}
     difficulty = float(tags.get("difficulty") or 3)
     target = _target_difficulty(float(weak["mastery_score"]))
-    difficulty_fit = _clamp(1 - abs(difficulty - target) / 3.5)
-    correct_rate = float(performance.get("correct_rate", 0.65))
-    cohort_fit = _clamp(1 - abs(correct_rate - 0.68) / 0.55)
+    curriculum_difficulty_fit = _clamp(1 - abs(difficulty - target) / 3.5)
+    expected_success, information_gain = _item_response_scores(
+        float(weak["mastery_score"]), str(question.get("question_type") or ""), performance
+    )
+    target_probability_fit = math.exp(
+        -((expected_success - TARGET_SUCCESS_PROBABILITY) ** 2) / (2.0 * TARGET_SUCCESS_WIDTH**2)
+    )
+    difficulty_fit = 0.65 * target_probability_fit + 0.35 * curriculum_difficulty_fit
     detail = tags.get("tags_confidence_detail") or {}
     reliability = float(detail.get("overall") or tags.get("tags_confidence") or 0)
     components = {
         "weakness": round(1 - float(weak["mastery_score"]), 3),
         "difficulty_fit": round(difficulty_fit, 3),
+        "target_probability_fit": round(target_probability_fit, 3),
+        "expected_success_rate": round(expected_success, 3),
+        "information_gain": round(information_gain, 3),
+        "mastery_uncertainty": round(_mastery_uncertainty_score(weak), 3),
         "knowledge_match": round(knowledge_match, 3),
-        "cohort_fit": round(cohort_fit, 3),
+        "cohort_fit": round(target_probability_fit, 3),
         "freshness": 1.0,
         "tag_reliability": round(reliability, 3),
     }
     total = (
-        0.35 * components["weakness"]
+        0.25 * components["weakness"]
         + 0.20 * components["difficulty_fit"]
-        + 0.15 * components["knowledge_match"]
-        + 0.10 * components["cohort_fit"]
-        + 0.10 * components["freshness"]
-        + 0.10 * components["tag_reliability"]
+        + 0.14 * components["knowledge_match"]
+        + 0.15 * components["information_gain"]
+        + 0.10 * components["mastery_uncertainty"]
+        + 0.08 * components["freshness"]
+        + 0.08 * components["tag_reliability"]
     )
     return round(total, 4), components
 
@@ -362,6 +459,7 @@ def _candidate_rows(
                 "source": source,
                 "target_knowledge": weak["tag_name"],
                 "target_mastery": weak["mastery_score"],
+                "target_mastery_uncertainty": weak.get("mastery_uncertainty", 0.0),
                 "target_status": weak["status"],
                 "primary_knowledge": tags.get("primary_knowledge") or "",
                 "difficulty": tags.get("difficulty") or 3,
@@ -388,12 +486,32 @@ def _candidate_rows(
     return sorted(candidates, key=lambda row: (-row["score"], row["display_id"]))
 
 
-def _adjusted_score(candidate: dict[str, Any], selected: list[dict[str, Any]]) -> float:
+def _number_agnostic_stem(value: str) -> str:
+    return re.sub(r"\d+(?:\.\d+)?", "#", _normalise_stem(value))
+
+
+def _candidate_similarity(candidate: dict[str, Any], selected: dict[str, Any]) -> float:
+    text_similarity = SequenceMatcher(
+        None,
+        _number_agnostic_stem(str(candidate.get("stem_markdown") or "")),
+        _number_agnostic_stem(str(selected.get("stem_markdown") or "")),
+    ).ratio()
+    knowledge_match = float(candidate.get("target_knowledge") == selected.get("target_knowledge"))
+    type_match = float(candidate.get("question_type") == selected.get("question_type"))
+    return _clamp(0.70 * text_similarity + 0.20 * knowledge_match + 0.10 * type_match)
+
+
+def _selection_details(candidate: dict[str, Any], selected: list[dict[str, Any]]) -> tuple[float, float]:
     counts = Counter(row["question_type"] for row in selected)
     covered = {row["target_knowledge"] for row in selected}
     quota_bonus = 0.035 if counts[candidate["question_type"]] < TYPE_QUOTA.get(candidate["question_type"], 0) else -0.025
     coverage_bonus = 0.045 if candidate["target_knowledge"] not in covered else 0.0
-    return candidate["score"] + quota_bonus + coverage_bonus
+    max_similarity = max((_candidate_similarity(candidate, row) for row in selected), default=0.0)
+    return candidate["score"] + quota_bonus + coverage_bonus - MMR_DIVERSITY_PENALTY * max_similarity, max_similarity
+
+
+def _adjusted_score(candidate: dict[str, Any], selected: list[dict[str, Any]]) -> float:
+    return _selection_details(candidate, selected)[0]
 
 
 def _pick_balanced(
@@ -415,6 +533,9 @@ def _pick_balanced(
             if not available:
                 continue
             choice = max(available, key=lambda row: (_adjusted_score(row, selected), row["display_id"]))
+            selection_score, max_similarity = _selection_details(choice, selected)
+            choice["selection_score"] = round(selection_score, 4)
+            choice["max_selected_similarity"] = round(max_similarity, 3)
             selected.append(choice)
             selected_ids.add(choice["question_id"])
             count -= 1
@@ -440,7 +561,7 @@ def _reason(candidate: dict[str, Any]) -> str:
         cohort_text = f"班级答对 {cohort.get('correct', 0)} 人、答错 {cohort.get('wrong', 0)} 人"
     return (
         f"{source_text}；针对“{candidate['target_knowledge']}”（当前掌握度 {candidate['target_mastery']:.0%}），"
-        f"难度 {candidate['difficulty']}，{cohort_text}。"
+        f"预计答对率 {candidate['score_components']['expected_success_rate']:.0%}，{cohort_text}。"
     )
 
 

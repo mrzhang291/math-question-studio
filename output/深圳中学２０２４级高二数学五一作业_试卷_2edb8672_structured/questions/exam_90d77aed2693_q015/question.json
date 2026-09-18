@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_90d77aed2693_q015",
+  "display_id": "EXAM-90D77AED2693-Q015",
+  "source_exam": "深圳中学 2024 级高二数学 五一作业",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学２０２４级高二数学五一作业_试卷_2edb8672_ocr\\01_深圳中学２０２４级高二数学五一作业_试卷.md",
+  "solution_file": "",
+  "question_number": 15,
+  "question_type": "solution",
+  "stem_markdown": "### 15. 已知函数 $f(x) = \\frac{1}{2} ax^2 + (a - 1)x - \\ln x$ .\n\n(1)讨论 $f(x)$ 的单调性;\n\n(2)当a>0时，求函数 $f(x)$ 在 $[1,2]$ 的最小值 $g(a)$ .",
+  "stem_html": "<h3>15. 已知函数 $f(x) = \\frac{1}{2} ax^2 + (a - 1)x - \\ln x$ .</h3>\n<p>(1)讨论 $f(x)$ 的单调性;</p>\n<p>(2)当a&gt;0时，求函数 $f(x)$ 在 $[1,2]$ 的最小值 $g(a)$ .</p>",
+  "options": {},
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": null,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-10T08:14:07.614712+00:00",
+    "question_source_sha256": "15514af6ceb54dc08cbfc8100c7df26b356cb6688fdd3bfe5c4f436c61261dd5",
+    "solution_source_sha256": ""
+  }
+}

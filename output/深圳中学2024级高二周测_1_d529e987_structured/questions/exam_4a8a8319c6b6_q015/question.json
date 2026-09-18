@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "question_id": "exam_4a8a8319c6b6_q015",
+  "display_id": "EXAM-4A8A8319C6B6-Q015",
+  "source_exam": "深圳中学 2024 级高二数学周测（1）",
+  "source_file": "C:\\Users\\zcj00\\Desktop\\推题生题\\output\\深圳中学2024级高二周测_1_d529e987_ocr\\01_深圳中学2024级高二周测_1.md",
+  "solution_file": "",
+  "question_number": 15,
+  "question_type": "solution",
+  "stem_markdown": "### 15. 求下列函数的导数:\n\n(1) $y = \\mathrm{e}^{-x}(x + 1)^{2};$\n\n(2) $y = \\cos(3x - 1) - \\ln(-2x + 1);$\n\n(3) $y = \\sin 2x + \\cos ^{2} x;$\n\n(4) $y = \\frac{\\sqrt{2x - 1}}{x}.$\n\n(5) $y = e^{x}\\sin x - \\cos x$\n\n$$(6) y = \\tan x + \\ln (- x)$$\n\n(7) $y = x - \\sin \\frac{x}{2} \\cos \\frac{x}{2}$\n\n(8) $y = \\frac{\\ln(1 - x)}{\\mathrm{e}^x}$",
+  "stem_html": "<h3>15. 求下列函数的导数:</h3>\n<p>(1) $y = \\mathrm{e}^{-x}(x + 1)^{2};$</p>\n<p>(2) $y = \\cos(3x - 1) - \\ln(-2x + 1);$</p>\n<p>(3) $y = \\sin 2x + \\cos ^{2} x;$</p>\n<p>(4) $y = \\frac{\\sqrt{2x - 1}}{x}.$</p>\n<p>(5) $y = e^{x}\\sin x - \\cos x$</p>\n<p>$$(6) y = \\tan x + \\ln (- x)$$</p>\n<p>(7) $y = x - \\sin \\frac{x}{2} \\cos \\frac{x}{2}$</p>\n<p>(8) $y = \\frac{\\ln(1 - x)}{\\mathrm{e}^x}$</p>",
+  "options": {},
+  "answer": "",
+  "solution_markdown": "",
+  "solution_html": "",
+  "score": null,
+  "assets": [],
+  "quality_flags": [
+    "missing_answer",
+    "missing_solution"
+  ],
+  "provenance": {
+    "structured_by": "exam-ocr/scripts/structure_outputs.py",
+    "structured_at": "2026-09-11T09:06:33.892473+00:00",
+    "question_source_sha256": "792c0598f613c48e1cb160411bfdb4297a79c74daab446701006a1d3f8f24f16",
+    "solution_source_sha256": ""
+  }
+}

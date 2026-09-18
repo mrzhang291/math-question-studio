@@ -63,6 +63,11 @@ class StructuredRecommenderTests(unittest.TestCase):
         rows = build_mastery_rows([self.student], self.questions); tag_a = next(row for row in rows if row["tag_name"] == TAG_A)
         self.assertEqual(tag_a["attempts"], 3); self.assertEqual(tag_a["omitted"], 1)
         self.assertEqual(tag_a["wrongs"], 1); self.assertEqual(tag_a["partials"], 1)
+        self.assertEqual(tag_a["schema_version"], "student-mastery-v3")
+        self.assertIn("bkt-beta-blend", tag_a["mastery_model"])
+        self.assertGreater(tag_a["beta_mastery_score"], 0)
+        self.assertGreater(tag_a["bkt_mastery_score"], 0)
+        self.assertGreater(tag_a["mastery_uncertainty"], 0)
 
     def test_quality_gate_excludes_missing_solution(self) -> None:
         safe, excluded = build_safe_pool(self.questions, self.bank)
@@ -79,6 +84,9 @@ class StructuredRecommenderTests(unittest.TestCase):
         self.assertFalse(first["student_visible"])
         self.assertTrue(first["requires_new_question_generation"])
         self.assertTrue(all(not row["student_visible"] and row["generation_required"] for row in first_rows))
+        self.assertTrue(all("information_gain" in row["score_components"] for row in first_rows))
+        self.assertTrue(all("expected_success_rate" in row["score_components"] for row in first_rows))
+        self.assertTrue(all("max_selected_similarity" in row for row in first_rows))
 
 
 class ClassPaperTests(unittest.TestCase):
