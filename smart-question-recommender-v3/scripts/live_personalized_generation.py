@@ -1470,6 +1470,33 @@ def _reference_quality_error(row: dict[str, Any]) -> str:
     return ""
 
 
+def _validation_source_bank(bank: Path) -> list[dict[str, Any]]:
+    """Return tagged source questions plus eligible teacher-reference anchors."""
+    rows = _read_json(bank / "tags" / "all_question_tags.json")
+    if not isinstance(rows, list):
+        raise LiveGenerationError("题库标签数据格式不正确")
+    source_rows = [row for row in rows if isinstance(row, dict)]
+    known_ids = {str(row.get("question_id") or "") for row in source_rows}
+    pool_path = bank / "generation" / "student_generated_question_candidates.json"
+    if not pool_path.exists():
+        return source_rows
+    try:
+        pool = _read_json(pool_path)
+    except (OSError, json.JSONDecodeError) as exc:
+        raise LiveGenerationError("安全生题槽位数据无法读取") from exc
+    for slot in pool.get("slots") or []:
+        if not isinstance(slot, dict):
+            continue
+        for reference in slot.get("reference_questions") or []:
+            if not isinstance(reference, dict) or _reference_quality_error(reference):
+                continue
+            question_id = str(reference.get("question_id") or "")
+            if question_id and question_id not in known_ids:
+                source_rows.append(reference)
+                known_ids.add(question_id)
+    return source_rows
+
+
 def _slot_and_references(
     bank: Path,
     student_id: str,
@@ -5027,7 +5054,7 @@ def verify_personalized_draft(bank: Path, payload: dict[str, Any]) -> dict[str, 
                 verification.setdefault("_consensus_checks", 1)
         question = _question_from_draft(config, request, slot, references, draft, verification, attempt)
         errors = validate_generated_questions(
-            _read_json(bank / "tags" / "all_question_tags.json"),
+            _validation_source_bank(bank),
             {"schema_version": "generated-question-set-v1", "questions": [question]},
         )
         final_probability_error = _probability_branch_arithmetic_error(
@@ -5173,7 +5200,7 @@ def save_personalized_review(bank: Path, payload: dict[str, Any]) -> dict[str, A
     }
     question["teacher_review"] = teacher_review
     errors = validate_generated_questions(
-        _read_json(bank / "tags" / "all_question_tags.json"),
+        _validation_source_bank(bank),
         {"schema_version": "generated-question-set-v1", "questions": [question]},
         require_approved=status == "approved",
     )

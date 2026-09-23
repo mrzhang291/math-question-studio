@@ -657,6 +657,51 @@ class LivePersonalizedGenerationTests(unittest.TestCase):
         self.assertIn(question["question_id"], history)
         self.assertIn("reference_questions", history)
 
+    def test_teacher_reference_anchors_are_accepted_as_safe_provenance(self) -> None:
+        anchors = [
+            {**reference, "question_id": f"teacher_anchor_{index + 1}"}
+            for index, reference in enumerate(self.references[:3])
+        ]
+        (self.bank / "generation" / "student_generated_question_candidates.json").write_text(
+            json.dumps(
+                {
+                    "schema_version": "generated-question-candidate-pool-v1",
+                    "slots": [
+                        {
+                            "slot_id": "teacher-reference-functions",
+                            "scope": "knowledge_practice",
+                            "student_id": "KNOWLEDGE",
+                            "primary_knowledge": "函数性质",
+                            "question_type": "single_choice",
+                            "reference_questions": anchors,
+                            "reference_question_ids": [anchor["question_id"] for anchor in anchors],
+                            "candidates": [],
+                        }
+                    ],
+                },
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+        request = {**self.request(3), "mode": "knowledge"}
+        with patch(
+            "live_personalized_generation._gateway_chat_json",
+            side_effect=[
+                self.draft("教师参考锚点下生成的全新函数题。\nA. 1\nB. 2\nC. 3\nD. 4"),
+                self.verification(),
+            ],
+        ):
+            question = generate_personalized_question(self.bank, request)["question"]
+        self.assertEqual(
+            question["generation"]["reference_question_ids"],
+            [anchor["question_id"] for anchor in anchors],
+        )
+        saved = save_personalized_review(
+            self.bank,
+            {"question": question, "status": "approved", "reviewer": "teacher"},
+        )
+        self.assertEqual(saved["teacher_review"]["status"], "approved")
+
     def test_answer_mismatch_uses_two_independent_checks_and_corrects_draft(self) -> None:
         with patch(
             "live_personalized_generation._gateway_chat_json",
